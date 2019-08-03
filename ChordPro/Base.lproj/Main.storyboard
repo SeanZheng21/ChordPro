@@ -45,16 +45,25 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm3-Wk-QUs">
+                                <rect key="frame" x="138.5" y="64" width="98.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aLM-hK-KNy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GB2-EB-o2i"/>
+                            <constraint firstItem="Wm3-Wk-QUs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iuj-4h-hEa"/>
+                            <constraint firstItem="Wm3-Wk-QUs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hY6-a0-XHr"/>
                             <constraint firstItem="aLM-hK-KNy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tkD-JW-4TC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mre-Dc-Xur"/>
                     <connections>
+                        <outlet property="nowPlayingLabel" destination="Wm3-Wk-QUs" id="Hft-NS-pwf"/>
                         <outlet property="pauseButton" destination="J4S-Nl-Xvd" id="Te8-GQ-l4Y"/>
                         <outlet property="playButton" destination="ccS-Jy-YQB" id="1We-gg-7G4"/>
                         <outletCollection property="restartButton" destination="ETs-1U-EO9" collectionClass="NSMutableArray" id="NRR-Cu-N5m"/>

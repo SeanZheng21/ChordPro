@@ -11,28 +11,30 @@ import AVFoundation
 
 class LyricViewController: UIViewController {
 
+    var song: Song = Song("All Too Well", "Red", "Taylor Swift")
+    
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "All Too Well", ofType: "mp3")!))
+            let songURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: song.name, ofType: "mp3")!)
+            audioPlayer = try AVAudioPlayer(contentsOf: songURL)
             audioPlayer.prepareToPlay()
-            
             // Make the audio available
             let audioSession = AVAudioSession.sharedInstance()
-            do {
-                try audioSession.setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
-            } catch {
-                print(error)
-            }
+            try audioSession.setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
             
         } catch {
-            print(error)
+            print("Error in audio player init: \(error)")
         }
+        song.lyric = SongFactory.getLyric(of: song.name)
+        nowPlayingLabel.text = "Now playing: \(song.name)"
     }
 
+    @IBOutlet weak var nowPlayingLabel: UILabel!
+    
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet var restartButton: [UIButton]!
@@ -43,6 +45,7 @@ class LyricViewController: UIViewController {
     @IBAction func pause(_ sender: UIButton) {
         if audioPlayer.isPlaying {
             audioPlayer.pause()
+            print("Paused at: \(audioPlayer.currentTime)")
         }
     }
     @IBAction func restart(_ sender: UIButton) {
