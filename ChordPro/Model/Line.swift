@@ -12,17 +12,23 @@ class Line {
         didSet {
             words = []
             for wordStr in content.components(separatedBy: " ") {
-                words.append(parseWord(wordStr))
+                let (timeStamp, word, chord) = parseWord(wordStr)
+                text.append(word + " ")
+                words.append((timeStamp, word, chord))
             }
         }
     }
+    var text: String
     var words: [(Double?, String, Chord?)]
 
     init(_ content: String) {
+        self.text = ""
         self.content = content
         words = []
         for wordStr in content.components(separatedBy: " ") {
-            words.append(parseWord(wordStr))
+            let (timeStamp, word, chord) = parseWord(wordStr)
+            text.append(word + " ")
+            words.append((timeStamp, word, chord))
         }
     }
     
@@ -39,13 +45,10 @@ class Line {
             let min = Int(str[str.index(startIndex, offsetBy: 1)...str.index(startIndex, offsetBy: 2)])!
             let sec = Int(str[str.index(startIndex, offsetBy: 4)...str.index(startIndex, offsetBy: 5)])!
             let ms = Int(str[str.index(startIndex, offsetBy: 7)...str.index(startIndex, offsetBy: 8)])!
-            print("\(min) \(sec) \(ms)")
             timeStamp = Double(min) * 60 + Double(sec) + Double(ms) / 100.0
-            print("timestamp: \(timeStamp!)")
         }
         if str.hasSuffix("}}") && str.contains("{{") {
             hasChord = true
-            print("Has chord!")
             chord = Chord(String(str[str.index(str[str.range(of: "{{")!].startIndex, offsetBy: 2)..<str.index(endIndex, offsetBy: -2)]))
         }
         if hasTimeStamp {

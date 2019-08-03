@@ -13,7 +13,10 @@ class SongFactory {
         switch songName {
         case "All Too Well":
             lineStrings.append(contentsOf: [
-                "[00:00:01]Intro C G Am F",
+                "[00:00:01]Intro{{C}}",
+                "[00:07:00]Intro{{G}}",
+                "[00:12:60]Intro{{Am}}",
+                "[00:16:50]Intro{{F}}",
                 "[00:20.60]I{{C}} walked through the door with you",
                 "[00:23:29]the{{G}} air was cold",
                 "[00:25.91]But something ′bout it felt like home somehow and I",
