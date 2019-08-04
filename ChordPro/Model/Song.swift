@@ -7,17 +7,22 @@
 //
 
 import Foundation
+import UIKit
 class Song {
     
     let name: String
     let album: String
     let artist: String
+    let artwork: UIImage?
+    var duration: Double?
     var lyric: [Line]
     
     init(_ name: String, _ album: String, _ artist: String) {
         self.name = name
         self.album = album
         self.artist = artist
+        self.duration = 0
+        self.artwork = UIImage(named: name)
         self.lyric = []
     }
     

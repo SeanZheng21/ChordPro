@@ -19,53 +19,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plX-L3-aG2" userLabel="Chord Player View">
-                                <rect key="frame" x="10" y="532" width="355" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jZR-ml-ax5" userLabel="Chord Stack View">
+                                <rect key="frame" x="10" y="74" width="355" height="80"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vxs-NN-76Y">
-                                        <rect key="frame" x="47.5" y="35.5" width="260.5" height="49"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-if-66m">
+                                        <rect key="frame" x="154" y="0.0" width="47.5" height="51.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="C " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b48-l6-UFK">
+                                        <rect key="frame" x="169.5" y="59.5" width="16.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2nf-xe-A4n"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plX-L3-aG2" userLabel="Chord Player View">
+                                <rect key="frame" x="10" y="592" width="355" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="39A-kY-dsy">
+                                        <rect key="frame" x="2" y="2" width="351" height="56"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jZR-ml-ax5" userLabel="Chord Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="49"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYd-Dz-Evc">
+                                                <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="EYd-Dz-Evc" secondAttribute="height" multiplier="1:1" id="o6V-6u-ZJ0"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-Z2-9Hz" userLabel="Porgress Stack View">
+                                                <rect key="frame" x="64" y="9" width="186" height="38.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-if-66m">
-                                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipN-7m-4II">
+                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="8.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b48-l6-UFK">
-                                                        <rect key="frame" x="15.5" y="28.5" width="16.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DR7-QF-qem">
+                                                        <rect key="frame" x="0.0" y="16.5" width="186" height="2"/>
+                                                        <color key="progressTintColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </progressView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 / 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwa-rq-ueY">
+                                                        <rect key="frame" x="0.0" y="26.5" width="186" height="12"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aLM-hK-KNy" userLabel="Player Stack View">
-                                                <rect key="frame" x="55.5" y="3.5" width="205" height="42"/>
+                                                <rect key="frame" x="258" y="8" width="93" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccS-Jy-YQB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="42"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <state key="normal" title="Play"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccS-Jy-YQB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="42.5" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ccS-Jy-YQB" secondAttribute="height" multiplier="273:256" id="AMJ-xy-BhL"/>
+                                                            <constraint firstAttribute="height" constant="40" id="u6n-7U-vue"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Play/Pause" image="play"/>
                                                         <connections>
-                                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eac-Fi-aY8"/>
+                                                            <action selector="playPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eac-Fi-aY8"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4S-Nl-Xvd">
-                                                        <rect key="frame" x="54" y="0.0" width="66" height="42"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <state key="normal" title="Pause"/>
-                                                        <connections>
-                                                            <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ymu-H9-Uca"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETs-1U-EO9">
-                                                        <rect key="frame" x="128" y="0.0" width="77" height="42"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <state key="normal" title="Restart">
-                                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETs-1U-EO9">
+                                                        <rect key="frame" x="50.5" y="0.0" width="42.5" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ETs-1U-EO9" secondAttribute="height" multiplier="1083:1024" id="SWm-Di-Zli"/>
+                                                            <constraint firstAttribute="height" constant="40" id="vXf-6S-wgt"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Restart" image="restart">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEW-zj-hpc"/>
@@ -76,18 +104,20 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.85490196080000003" green="0.86274509799999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="vxs-NN-76Y" firstAttribute="centerY" secondItem="plX-L3-aG2" secondAttribute="centerY" id="6LM-bP-uxj"/>
-                                    <constraint firstAttribute="height" constant="120" id="VxQ-2F-VjG"/>
-                                    <constraint firstItem="vxs-NN-76Y" firstAttribute="centerX" secondItem="plX-L3-aG2" secondAttribute="centerX" id="ieo-Ns-due"/>
+                                    <constraint firstAttribute="bottom" secondItem="39A-kY-dsy" secondAttribute="bottom" constant="2" id="75R-2n-AoY"/>
+                                    <constraint firstAttribute="trailing" secondItem="39A-kY-dsy" secondAttribute="trailing" constant="2" id="Fcj-rR-4mS"/>
+                                    <constraint firstAttribute="height" constant="60" id="VxQ-2F-VjG"/>
+                                    <constraint firstItem="39A-kY-dsy" firstAttribute="top" secondItem="plX-L3-aG2" secondAttribute="top" constant="2" id="d4S-8v-XqJ"/>
+                                    <constraint firstItem="39A-kY-dsy" firstAttribute="leading" secondItem="plX-L3-aG2" secondAttribute="leading" constant="2" id="uLe-I9-OpU"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-RQ-Ziu">
-                                <rect key="frame" x="10" y="74" width="355" height="448"/>
+                                <rect key="frame" x="10" y="156" width="355" height="426"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lyricLine" id="JPN-kJ-SpW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lyricLine" id="JPN-kJ-SpW" customClass="LyricTableViewCell" customModule="ChordPro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="355" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JPN-kJ-SpW" id="GCa-Tc-8uJ">
@@ -100,11 +130,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jZR-ml-ax5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="1Vc-Jy-57p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jZR-ml-ax5" secondAttribute="trailing" constant="10" id="5eJ-g6-TYZ"/>
                             <constraint firstItem="eBk-RQ-Ziu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="DAM-Xy-mcZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="plX-L3-aG2" secondAttribute="bottom" constant="15" id="DcW-iK-Oan"/>
-                            <constraint firstItem="eBk-RQ-Ziu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="MwH-jy-z6s"/>
+                            <constraint firstItem="jZR-ml-ax5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="FDQ-el-gwR"/>
                             <constraint firstItem="plX-L3-aG2" firstAttribute="top" secondItem="eBk-RQ-Ziu" secondAttribute="bottom" constant="10" id="SKt-b1-p1x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eBk-RQ-Ziu" secondAttribute="trailing" constant="10" id="Z7R-NQ-a9X"/>
+                            <constraint firstItem="eBk-RQ-Ziu" firstAttribute="top" secondItem="jZR-ml-ax5" secondAttribute="bottom" constant="2" id="cqD-lO-VnI"/>
                             <constraint firstItem="plX-L3-aG2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tG5-zs-qnH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="plX-L3-aG2" secondAttribute="trailing" constant="10" id="wCx-F9-Abw"/>
                         </constraints>
@@ -112,9 +145,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Mre-Dc-Xur"/>
                     <connections>
+                        <outlet property="artworkImageView" destination="EYd-Dz-Evc" id="8nO-Su-sT5"/>
                         <outlet property="chordLabel" destination="b48-l6-UFK" id="IjT-eX-EC1"/>
-                        <outlet property="pauseButton" destination="J4S-Nl-Xvd" id="Te8-GQ-l4Y"/>
-                        <outlet property="playButton" destination="ccS-Jy-YQB" id="1We-gg-7G4"/>
+                        <outlet property="playPauseButton" destination="ccS-Jy-YQB" id="1We-gg-7G4"/>
+                        <outlet property="progressBar" destination="DR7-QF-qem" id="bC3-Kd-OGW"/>
+                        <outlet property="progressLabel" destination="Iwa-rq-ueY" id="dSZ-Em-eGl"/>
                         <outlet property="tableView" destination="eBk-RQ-Ziu" id="v3P-3c-KU5"/>
                         <outletCollection property="restartButton" destination="ETs-1U-EO9" collectionClass="NSMutableArray" id="NRR-Cu-N5m"/>
                     </connections>
@@ -142,4 +177,8 @@
             <point key="canvasLocation" x="23" y="27"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play" width="512" height="512"/>
+        <image name="restart" width="1024" height="1024"/>
+    </resources>
 </document>

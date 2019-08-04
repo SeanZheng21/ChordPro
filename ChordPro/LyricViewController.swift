@@ -29,29 +29,41 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             // Make the audio available
             let audioSession = AVAudioSession.sharedInstance()
             try audioSession.setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
-            
         } catch {
             print("Error in audio player init: \(error)")
         }
-        song.lyric = SongFactory.getLyric(of: song.name)
-        navigationItem.title = song.name
         timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(checkLyric), userInfo: nil, repeats: true)
         timer.tolerance = 0.2
         timer.invalidate()
+        
+        song.lyric = SongFactory.getLyric(of: song.name)
+        song.duration = audioPlayer.duration
+        navigationItem.title = song.name
+        artworkImageView.image = song.artwork
     }
 
     @IBOutlet weak var chordLabel: UILabel!
-
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var pauseButton: UIButton!
+    
+    // MARK: - Player
+    @IBOutlet weak var artworkImageView: UIImageView! {
+        didSet {
+            artworkImageView.layer.cornerRadius = 5
+        }
+    }
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet var restartButton: [UIButton]!
     
-    @IBAction func play(_ sender: UIButton) {
-        audioPlayer.play()
-        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(checkLyric), userInfo: nil, repeats: true)
-    }
-    @IBAction func pause(_ sender: UIButton) {
-        if audioPlayer.isPlaying {
+    @IBAction func playPause(_ sender: UIButton) {
+        if !audioPlayer.isPlaying {
+            // Play
+            playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
+            audioPlayer.play()
+            timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(checkLyric), userInfo: nil, repeats: true)
+        } else {
+            // Pause
+            playPauseButton.setImage(UIImage(named: "play"), for: .normal)
             audioPlayer.pause()
             timer.invalidate()
             print("Paused at: \(audioPlayer.currentTime)")
@@ -59,11 +71,11 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     @IBAction func restart(_ sender: UIButton) {
         if audioPlayer.isPlaying {
+            audioPlayer.pause()
             audioPlayer.currentTime = 0
-            audioPlayer.play()
-        } else {
-            audioPlayer.play()
         }
+        audioPlayer.play()
+        playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
         timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(checkLyric), userInfo: nil, repeats: true)
     }
     
@@ -74,6 +86,25 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let lN = lineNum {
             tableView.scrollToRow(at: IndexPath.init(row: lN, section: 0), at: .top, animated: true)
         }
+        let current = audioPlayer.currentTime, duration = audioPlayer.duration
+        progressBar.progress = Float(current / duration)
+        progressLabel.text = formatTime(inSeconds: Int(current)) + " / " + formatTime(inSeconds: Int(duration))
+    }
+    
+    private func formatTime(inSeconds time: Int) -> String {
+        var minute = "00"
+        var second = "00"
+        if time > 599 {
+            minute = "\(Int(time / 60))"
+        } else {
+            minute = "0\(Int(time / 60))"
+        }
+        if time % 60 < 10 {
+            second = "0\(Int(time % 60))"
+        } else {
+            second = "\(Int(time % 60))"
+        }
+        return minute + ":" + second
     }
     
     
@@ -92,7 +123,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "lyricLine", for: indexPath)
+     let cell = tableView.dequeueReusableCell(withIdentifier: "lyricLine", for: indexPath) as! LyricTableViewCell
 
      // Configure the cell...
      cell.textLabel?.text = song.lyric[indexPath.row].text

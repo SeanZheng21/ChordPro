@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF089D8322F5C2220066B988 /* SongFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF089D8222F5C2220066B988 /* SongFactory.swift */; };
+		FF49807822F6C5450032F04E /* LyricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49807722F6C5450032F04E /* LyricTableViewCell.swift */; };
 		FF76C07F22F57E4A005254F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76C07E22F57E4A005254F5 /* AppDelegate.swift */; };
 		FF76C08122F57E4A005254F5 /* LyricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76C08022F57E4A005254F5 /* LyricViewController.swift */; };
 		FF76C08422F57E4A005254F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF76C08222F57E4A005254F5 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		FF089D8222F5C2220066B988 /* SongFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFactory.swift; sourceTree = "<group>"; };
+		FF49807722F6C5450032F04E /* LyricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LyricTableViewCell.swift; path = ChordPro/LyricTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		FF76C07B22F57E4A005254F5 /* ChordPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF76C07E22F57E4A005254F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF76C08022F57E4A005254F5 /* LyricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				FF76C08222F57E4A005254F5 /* Main.storyboard */,
+				FF49807722F6C5450032F04E /* LyricTableViewCell.swift */,
 				FF76C08722F57E4B005254F5 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
@@ -190,6 +193,7 @@
 				FFB890DC22F592EF002337EA /* Chord.swift in Sources */,
 				FF76C07F22F57E4A005254F5 /* AppDelegate.swift in Sources */,
 				FFB890DE22F59322002337EA /* Line.swift in Sources */,
+				FF49807822F6C5450032F04E /* LyricTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
