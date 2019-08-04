@@ -28,20 +28,26 @@
                                             <constraint firstAttribute="width" secondItem="dar-36-gjj" secondAttribute="height" multiplier="5:6" id="Aq2-U3-lwM"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-QY-ltZ">
-                                        <rect key="frame" x="74.5" y="8" width="280.5" height="64.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-QY-ltZ">
+                                        <rect key="frame" x="74.5" y="12.5" width="280.5" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b48-l6-UFK">
-                                                <rect key="frame" x="0.0" y="0.0" width="280.5" height="36"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="43" height="55"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strumming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I71-8G-z1g">
-                                                <rect key="frame" x="0.0" y="44" width="280.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="160.5" y="0.0" width="120" height="55"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                                <color key="textColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                </variation>
+                                                <variation key="widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                     </stackView>

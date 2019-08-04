@@ -11,7 +11,7 @@ import AVFoundation
 
 class LyricViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    static let START_TIME: Double = 0.0
+    static let START_TIME: Double = 15.0
     var song: Song = Song("All Too Well", "Red", "Taylor Swift")
     var timer: Timer = Timer()
     var audioPlayer = AVAudioPlayer()
@@ -33,7 +33,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             print("Error in audio player init: \(error)")
         }
         timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(checkLyric), userInfo: nil, repeats: true)
-        timer.tolerance = 0.2
+        timer.tolerance = 0.1
         timer.invalidate()
         
         song.lyric = SongFactory.getLyric(of: song.name)
@@ -62,7 +62,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             // Play
             playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
             audioPlayer.play()
-            timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(checkLyric), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(checkLyric), userInfo: nil, repeats: true)
         } else {
             // Pause
             playPauseButton.setImage(UIImage(named: "play"), for: .normal)
@@ -91,7 +91,11 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         var isStrumming = false
         if let lT = lyricText, lT.starts(with: "Strumming:") {
-            strummingLabel.text = String(lT.dropFirst(10))
+            let plainText = String(lT.dropFirst(10))
+            strummingLabel.text = plainText.replacingOccurrences(of: "DU", with: "⇵")
+                                            .replacingOccurrences(of: "UD", with: "⇅")
+                                            .replacingOccurrences(of: "D", with: "↓")
+                                            .replacingOccurrences(of: "U", with: "↑")
             isStrumming = true
         }
         if let cT = chordText, !isStrumming {
@@ -119,11 +123,20 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "lyricLine", for: indexPath) as! LyricTableViewCell
-
      // Configure the cell...
      cell.textLabel?.text = song.lyric[indexPath.row].text
      return cell
      }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let timeStamp = song.lyric[indexPath.row].words[0].0 {
+            audioPlayer.currentTime = timeStamp
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
+        audioPlayer.play()
+        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(checkLyric), userInfo: nil, repeats: true)
+    }
     
     
     
