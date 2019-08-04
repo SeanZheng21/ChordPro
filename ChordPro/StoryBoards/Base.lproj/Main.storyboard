@@ -19,26 +19,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jZR-ml-ax5" userLabel="Chord Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jZR-ml-ax5" userLabel="Chord Stack View">
                                 <rect key="frame" x="10" y="74" width="355" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-if-66m">
-                                        <rect key="frame" x="154" y="0.0" width="47.5" height="51.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="C " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b48-l6-UFK">
-                                        <rect key="frame" x="169.5" y="59.5" width="16.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C" translatesAutoresizingMaskIntoConstraints="NO" id="dar-36-gjj">
+                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dar-36-gjj" secondAttribute="height" multiplier="5:6" id="Aq2-U3-lwM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-QY-ltZ">
+                                        <rect key="frame" x="74.5" y="8" width="280.5" height="64.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b48-l6-UFK">
+                                                <rect key="frame" x="0.0" y="0.0" width="280.5" height="36"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strumming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I71-8G-z1g">
+                                                <rect key="frame" x="0.0" y="44" width="280.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="2nf-xe-A4n"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-RQ-Ziu">
+                                <rect key="frame" x="10" y="156" width="355" height="426"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lyricLine" id="JPN-kJ-SpW" customClass="LyricTableViewCell" customModule="ChordPro" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JPN-kJ-SpW" id="GCa-Tc-8uJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plX-L3-aG2" userLabel="Chord Player View">
                                 <rect key="frame" x="10" y="592" width="355" height="60"/>
                                 <subviews>
@@ -113,20 +138,6 @@
                                     <constraint firstItem="39A-kY-dsy" firstAttribute="leading" secondItem="plX-L3-aG2" secondAttribute="leading" constant="2" id="uLe-I9-OpU"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-RQ-Ziu">
-                                <rect key="frame" x="10" y="156" width="355" height="426"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="lyricLine" id="JPN-kJ-SpW" customClass="LyricTableViewCell" customModule="ChordPro" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="355" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JPN-kJ-SpW" id="GCa-Tc-8uJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -146,10 +157,12 @@
                     <navigationItem key="navigationItem" id="Mre-Dc-Xur"/>
                     <connections>
                         <outlet property="artworkImageView" destination="EYd-Dz-Evc" id="8nO-Su-sT5"/>
+                        <outlet property="chordImage" destination="dar-36-gjj" id="S4X-EP-wsx"/>
                         <outlet property="chordLabel" destination="b48-l6-UFK" id="IjT-eX-EC1"/>
                         <outlet property="playPauseButton" destination="ccS-Jy-YQB" id="1We-gg-7G4"/>
                         <outlet property="progressBar" destination="DR7-QF-qem" id="bC3-Kd-OGW"/>
                         <outlet property="progressLabel" destination="Iwa-rq-ueY" id="dSZ-Em-eGl"/>
+                        <outlet property="strummingLabel" destination="I71-8G-z1g" id="sXe-1g-UOp"/>
                         <outlet property="tableView" destination="eBk-RQ-Ziu" id="v3P-3c-KU5"/>
                         <outletCollection property="restartButton" destination="ETs-1U-EO9" collectionClass="NSMutableArray" id="NRR-Cu-N5m"/>
                     </connections>
@@ -178,6 +191,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="C" width="100" height="120"/>
         <image name="play" width="512" height="512"/>
         <image name="restart" width="1024" height="1024"/>
     </resources>

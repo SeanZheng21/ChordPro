@@ -8,27 +8,48 @@
 
 import Foundation
 class Line {
+    
+    var isStrumming: Bool
+    var text: String
+    
+    // Format for lyric line:  (timeStamp, word, chord)
+    // Format for strumming mark: (timeStamp, pattern, nil)
+    var words: [(Double?, String, Chord?)]
     var content: String {
         didSet {
+            if isStrumming {
+                let (timeStamp, pattern) = parseStrumming(content)
+                text = "Strumming: " + pattern
+                words = []
+                words.append((timeStamp, pattern, nil))
+            } else {
+                words = []
+                for wordStr in content.components(separatedBy: " ") {
+                    let (timeStamp, word, chord) = parseWord(wordStr)
+                    text.append(word + " ")
+                    words.append((timeStamp, word, chord))
+                }
+            }
+        }
+    }
+
+    init(_ content: String) {
+        self.text = ""
+        self.content = content
+        words = []
+        isStrumming = content.hasSuffix("##Strumming##")
+        if isStrumming {
+            let (timeStamp, pattern) = parseStrumming(content)
+            text = "Strumming: " + pattern
+            words = []
+            words.append((timeStamp, pattern, nil))
+        } else {
             words = []
             for wordStr in content.components(separatedBy: " ") {
                 let (timeStamp, word, chord) = parseWord(wordStr)
                 text.append(word + " ")
                 words.append((timeStamp, word, chord))
             }
-        }
-    }
-    var text: String
-    var words: [(Double?, String, Chord?)]
-
-    init(_ content: String) {
-        self.text = ""
-        self.content = content
-        words = []
-        for wordStr in content.components(separatedBy: " ") {
-            let (timeStamp, word, chord) = parseWord(wordStr)
-            text.append(word + " ")
-            words.append((timeStamp, word, chord))
         }
     }
     
@@ -65,5 +86,17 @@ class Line {
             }
         }
         return (timeStamp, word, chord)
+    }
+    
+    private func parseStrumming(_ str: String) -> (Double?, String) {
+        let startIndex = str.startIndex
+        let endIndex = str.endIndex
+
+        let min = Int(str[str.index(startIndex, offsetBy: 1)...str.index(startIndex, offsetBy: 2)])!
+        let sec = Int(str[str.index(startIndex, offsetBy: 4)...str.index(startIndex, offsetBy: 5)])!
+        let ms = Int(str[str.index(startIndex, offsetBy: 7)...str.index(startIndex, offsetBy: 8)])!
+        let timeStamp = Double(min) * 60 + Double(sec) + Double(ms) / 100.0
+        let pattern = str[str.index(startIndex, offsetBy: 10)...str.index(endIndex, offsetBy: -14)]
+        return (timeStamp, String(pattern))
     }
 }

@@ -13,10 +13,12 @@ class SongFactory {
         switch songName {
         case "All Too Well":
             lineStrings.append(contentsOf: [
-                "[00:00:01]Intro{{C}} C",
+                "[00:00:55]D D D DU - D D D DU##Strumming##",
+                "[00:00:57]Intro{{C}} C",
                 "[00:07:00]Intro{{G}} G",
                 "[00:12:00]Intro{{Am}} Am",
                 "[00:16:50]Intro{{F}} F",
+                "[00:20:30]D D D D - D D D DU##Strumming##",
                 "[00:20.60]I{{C}} walked through the door with you [00:23:29]the{{G}} air was cold",
                 "[00:25.91]But{{Am}} something ′bout it felt like [00:28:00]home{{F}} somehow and I",
                 "[00:31.51]Left{{C}} my scarf there at your [00:34:00]sister′s{{G}} house",

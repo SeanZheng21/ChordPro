@@ -43,6 +43,8 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     @IBOutlet weak var chordLabel: UILabel!
+    @IBOutlet weak var strummingLabel: UILabel!
+    @IBOutlet weak var chordImage: UIImageView!
     
     // MARK: - Player
     @IBOutlet weak var artworkImageView: UIImageView! {
@@ -80,33 +82,26 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @objc func checkLyric () {
-        var lineNum: Int?
-//        var wordNum: Int?
-        (_, chordLabel.text, lineNum, _) = song.getLyrics(at: audioPlayer.currentTime)
+        if !audioPlayer.isPlaying {
+            return
+        }
+        let (lyricText, chordText, lineNum, _) = song.getLyrics(at: audioPlayer.currentTime)
         if let lN = lineNum {
             tableView.scrollToRow(at: IndexPath.init(row: lN, section: 0), at: .top, animated: true)
         }
+        var isStrumming = false
+        if let lT = lyricText, lT.starts(with: "Strumming:") {
+            strummingLabel.text = String(lT.dropFirst(10))
+            isStrumming = true
+        }
+        if let cT = chordText, !isStrumming {
+            chordLabel.text = cT
+            chordImage.image = UIImage(named: cT)
+        }
         let current = audioPlayer.currentTime, duration = audioPlayer.duration
         progressBar.progress = Float(current / duration)
-        progressLabel.text = formatTime(inSeconds: Int(current)) + " / " + formatTime(inSeconds: Int(duration))
+        progressLabel.text = Int(current).formatTime() + " / " + Int(duration).formatTime()
     }
-    
-    private func formatTime(inSeconds time: Int) -> String {
-        var minute = "00"
-        var second = "00"
-        if time > 599 {
-            minute = "\(Int(time / 60))"
-        } else {
-            minute = "0\(Int(time / 60))"
-        }
-        if time % 60 < 10 {
-            second = "0\(Int(time % 60))"
-        } else {
-            second = "\(Int(time % 60))"
-        }
-        return minute + ":" + second
-    }
-    
     
     @IBOutlet weak var tableView: UITableView!
     // MARK: - Table view data source
@@ -131,40 +126,6 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
      }
     
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
     /*
      // MARK: - Navigation
@@ -177,3 +138,21 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
      */
 }
 
+extension Int {
+    func formatTime() -> String {
+        // Formats the integer to format: mm:SS
+        var minute = "00"
+        var second = "00"
+        if self > 599 {
+            minute = "\(Int(self / 60))"
+        } else {
+            minute = "0\(Int(self / 60))"
+        }
+        if self % 60 < 10 {
+            second = "0\(Int(self % 60))"
+        } else {
+            second = "\(Int(self % 60))"
+        }
+        return minute + ":" + second
+    }
+}
