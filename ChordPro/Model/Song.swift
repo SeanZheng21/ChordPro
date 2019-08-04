@@ -25,4 +25,22 @@ class Song {
         self.init("New Song", "Unknow Album", "Unknown Artist")
     }
     
+    func getLyrics(at time: Double) -> (String?, String?, Int?, Int?) {
+        var previousLyric = 0, previousJ = 0
+        for i in 0..<self.lyric.count {
+            for j in 0..<self.lyric[i].words.count {
+                let (timeStamp, _, _) = self.lyric[i].words[j]
+                if let tS = timeStamp {
+                    if tS > time {
+                        let (_, _, ch) = self.lyric[previousLyric].words[previousJ]
+                        return (self.lyric[previousLyric].text, ch?.name ?? "", previousLyric, previousJ)
+                    } else {
+                        previousLyric = i
+                        previousJ = j
+                    }
+                }
+            }
+        }
+        return (nil, nil, nil, nil)
+    }
 }

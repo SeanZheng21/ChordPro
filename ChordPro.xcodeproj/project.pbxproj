@@ -58,6 +58,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FF49807422F6B1DE0032F04E /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				FF76C08222F57E4A005254F5 /* Main.storyboard */,
+				FF76C08722F57E4B005254F5 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
 		FF76C07222F57E4A005254F5 = {
 			isa = PBXGroup;
 			children = (
@@ -80,10 +89,9 @@
 				FF76C07E22F57E4A005254F5 /* AppDelegate.swift */,
 				FF76C08022F57E4A005254F5 /* LyricViewController.swift */,
 				FF089D8122F5B0D80066B988 /* Model */,
-				FF76C08222F57E4A005254F5 /* Main.storyboard */,
-				FF76C08522F57E4B005254F5 /* Assets.xcassets */,
+				FF49807422F6B1DE0032F04E /* StoryBoards */,
 				FF76C09022F5857C005254F5 /* Music */,
-				FF76C08722F57E4B005254F5 /* LaunchScreen.storyboard */,
+				FF76C08522F57E4B005254F5 /* Assets.xcassets */,
 				FF76C08A22F57E4B005254F5 /* Info.plist */,
 			);
 			path = ChordPro;
