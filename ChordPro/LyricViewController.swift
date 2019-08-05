@@ -12,7 +12,7 @@ import AVFoundation
 class LyricViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     static let START_TIME: Double = 15.0
-    var song: Song = Song("All Too Well", "Red", "Taylor Swift")
+    var song: Song = Song("All Too Well", "Red", "Taylor Swift", "C G Am F")
     var timer: Timer = Timer()
     var audioPlayer = AVAudioPlayer()
     
@@ -93,13 +93,17 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let lT = lyricText, lT.starts(with: "Strumming:") {
             let plainText = String(lT.dropFirst(10))
             strummingLabel.text = plainText.replacingOccurrences(of: "DU", with: "⇵")
-                                            .replacingOccurrences(of: "UD", with: "⇅")
-                                            .replacingOccurrences(of: "D", with: "↓")
-                                            .replacingOccurrences(of: "U", with: "↑")
+                .replacingOccurrences(of: "DF", with: "⬇")
+                .replacingOccurrences(of: "UF", with: "⬆")
+                .replacingOccurrences(of: "UD", with: "⇅")
+                .replacingOccurrences(of: "D", with: "↓")
+                .replacingOccurrences(of: "U", with: "↑")
+            self.strummingLabel.textColor = (self.strummingLabel.textColor == #colorLiteral(red: 1, green: 0.2527923882, blue: 1, alpha: 1) ? #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1) : #colorLiteral(red: 1, green: 0.2527923882, blue: 1, alpha: 1))
             isStrumming = true
         }
-        if let cT = chordText, !isStrumming {
+        if let cT = chordText, !isStrumming, chordLabel.text != cT {
             chordLabel.text = cT
+            self.chordLabel.textColor = (self.chordLabel.textColor == #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1) ? #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1) : #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))
             chordImage.image = UIImage(named: cT)
         }
         let current = audioPlayer.currentTime, duration = audioPlayer.duration
@@ -140,15 +144,34 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     
-    /*
+    
      // MARK: - Navigation
-     
+    
+    @IBAction func handleChordTap(recognizer:UITapGestureRecognizer) {
+        playPauseButton.setImage(UIImage(named: "play"), for: .normal)
+        audioPlayer.pause()
+        timer.invalidate()
+        performSegue(withIdentifier: "chordSegue", sender: self)
+    }
+    
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "chordSegue":
+                if let chordVC = segue.destination as? ChordViewController {
+                    chordVC.chord = Chord(chordLabel.text ?? "")
+                    chordVC.strumming = strummingLabel.text
+                    chordVC.song = self.song
+                }
+            default:
+                print("Unknown segue identifier: \(identifier)")
+            }
+        }
      }
-     */
+    
 }
 
 extension Int {

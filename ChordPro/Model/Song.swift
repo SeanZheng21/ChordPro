@@ -15,19 +15,24 @@ class Song {
     let artist: String
     let artwork: UIImage?
     var duration: Double?
+    var progression: String?
+    var capo: Int
+    
     var lyric: [Line]
     
-    init(_ name: String, _ album: String, _ artist: String) {
+    init(_ name: String, _ album: String, _ artist: String, _ progression: String, _ capo: Int = 0) {
         self.name = name
         self.album = album
         self.artist = artist
         self.duration = 0
         self.artwork = UIImage(named: name)
         self.lyric = []
+        self.capo = capo
+        self.progression = progression
     }
     
     convenience init() {
-        self.init("New Song", "Unknow Album", "Unknown Artist")
+        self.init("New Song", "Unknow Album", "Unknown Artist","")
     }
     
     func getLyrics(at time: Double) -> (String?, String?, Int?, Int?) {

@@ -52,9 +52,13 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="2nf-xe-A4n"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hbU-Hb-0ja" appends="YES" id="1Gf-hU-XOw"/>
+                                </connections>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-RQ-Ziu">
                                 <rect key="frame" x="10" y="156" width="355" height="426"/>
@@ -171,11 +175,89 @@
                         <outlet property="strummingLabel" destination="I71-8G-z1g" id="sXe-1g-UOp"/>
                         <outlet property="tableView" destination="eBk-RQ-Ziu" id="v3P-3c-KU5"/>
                         <outletCollection property="restartButton" destination="ETs-1U-EO9" collectionClass="NSMutableArray" id="NRR-Cu-N5m"/>
+                        <segue destination="iy5-8a-he3" kind="show" identifier="chordSegue" id="Zvy-Mm-wLx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hbU-Hb-0ja">
+                    <connections>
+                        <action selector="handleChordTapWithRecognizer:" destination="BYZ-38-t0r" id="Pdc-Kb-hNQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="27.436281859070466"/>
+        </scene>
+        <!--Chord View Controller-->
+        <scene sceneID="aha-mY-tyj">
+            <objects>
+                <viewController id="iy5-8a-he3" userLabel="Chord View Controller" customClass="ChordViewController" customModule="ChordPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9jk-Je-dpv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k1a-nB-XDU">
+                                <rect key="frame" x="55" y="64" width="265" height="102.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oe-eY-TG6">
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="55"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strumming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIo-Wo-Ncb">
+                                        <rect key="frame" x="47.5" y="63" width="170.5" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                        <color key="textColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wCr-RD-G9b">
+                                <rect key="frame" x="50" y="168.5" width="275" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wCr-RD-G9b" secondAttribute="height" multiplier="5:6" id="AbV-z4-HmB"/>
+                                    <constraint firstAttribute="width" constant="275" id="Vme-Nw-Zgp"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NJr-2l-8ll">
+                                <rect key="frame" x="102.5" y="588" width="170" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Progression" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXY-XW-bfS">
+                                        <rect key="frame" x="14" y="0.0" width="142.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strumming instruction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJf-Nu-dqg">
+                                        <rect key="frame" x="0.0" y="28.5" width="170" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NJr-2l-8ll" firstAttribute="centerX" secondItem="9jk-Je-dpv" secondAttribute="centerX" id="Gmp-hK-M6U"/>
+                            <constraint firstItem="g73-ex-yWh" firstAttribute="bottom" secondItem="NJr-2l-8ll" secondAttribute="bottom" constant="30" id="SIm-tQ-t68"/>
+                            <constraint firstItem="wCr-RD-G9b" firstAttribute="centerY" secondItem="9jk-Je-dpv" secondAttribute="centerY" id="df5-V3-1oz"/>
+                            <constraint firstItem="wCr-RD-G9b" firstAttribute="centerX" secondItem="9jk-Je-dpv" secondAttribute="centerX" id="gsB-2h-BmV"/>
+                            <constraint firstItem="k1a-nB-XDU" firstAttribute="top" secondItem="g73-ex-yWh" secondAttribute="top" id="nFm-g4-hDd"/>
+                            <constraint firstItem="k1a-nB-XDU" firstAttribute="centerX" secondItem="9jk-Je-dpv" secondAttribute="centerX" id="sdZ-BW-IpZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g73-ex-yWh"/>
+                    </view>
+                    <connections>
+                        <outlet property="chordImage" destination="wCr-RD-G9b" id="NNK-4Y-o0H"/>
+                        <outlet property="chordNameLabel" destination="6oe-eY-TG6" id="qw5-5H-d8C"/>
+                        <outlet property="progressionLabel" destination="YXY-XW-bfS" id="gvd-wR-zhu"/>
+                        <outlet property="strummingLabel" destination="wIo-Wo-Ncb" id="Fo9-ux-CTj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RJp-EH-i6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xjE-rf-por">
