@@ -61,7 +61,7 @@ class SongFactory {
                 "[02:29.51]We dance around the kitchen in the refrigerator light",
                 "[02:34.30]Down the stairs‚ I was there‚ I remember it all too well‚ yeah",
                 "[02:59.92]Maybe we got lost in translation‚ maybe I asked for too much",
-                "[03:04.100]And maybe this thing was a masterpiece ′til you tore it all up",
+                "[03:04.10]And maybe this thing was a masterpiece ′til you tore it all up",
                 "[03:10.01]Running scared‚ I was there‚ I remember it all too well",
                 "[03:20.62]Hey‚ you call me up again just to break me like a promise",
                 "[03:26.00]So casually cruel in the name of being honest",
@@ -80,6 +80,42 @@ class SongFactory {
                 "[04:56.50]Wind in my hair‚ you were there‚ you remember it all",
                 "[05:01.11]Down the stairs‚ you were there‚ you remember it all",
                 "[05:06.41]It was rare‚ I was there‚ I remember it all too well"
+                ])
+        case "Perfect":
+            lineStrings.append(contentsOf: [
+                "[00:02.81]I found a love for me",
+                "[00:10.42]Darling‚ just dive right in and follow my lead",
+                "[00:17.92]Well‚ I found a girl‚ beautiful and sweet",
+                "[00:25.31]Oh‚ I never knew you were the someone waiting for me",
+                "[00:32.01]′Cause we were just kids when we fell in love",
+                "[00:36.91]Not knowing what it was",
+                "[00:40.50]I will not give you up this time",
+                "[00:48.11]But darling‚ just kiss me slow‚ your heart is all I own",
+                "[00:55.71]And in your eyes You are holding mine",
+                "[01:02.30]Baby‚ I am dancing in the dark with you between my arms",
+                "[01:13.81]Barefoot on the grass‚ listening to our favorite song",
+                "[01:20.80]When you said you looked a mess‚ I whispered underneath my breath",
+                "[01:27.82]But you heard it‚ darling‚ you look perfect tonight",
+                "[01:41.21]Well I found a woman‚ stronger than anyone I know",
+                "[01:48.80]She shares my dreams‚ I hope that someday I will share her home",
+                "[01:56.42]I found a love‚ to carry more than just my secrets",
+                "[02:04.41]To carry love‚ to carry children of our own",
+                "[02:10.72]We are still kids‚ but We are so in love",
+                "[02:15.32]Fighting against all odds",
+                "[02:19.10]I know we′ll be alright this time",
+                "[02:26.70]Darling‚ just hold my hand",
+                "[02:30.21]Be my girl‚ I will be your man",
+                "[02:34.32]I see my future in your eyes",
+                "[02:40.81]Baby‚ I am dancing in the dark‚ with you between my arms",
+                "[02:52.20]Barefoot on the grass‚ listening to our favorite song",
+                "[02:59.31]When I saw you in that dress‚ looking so beautiful",
+                "[03:05.21]I don′t deserve this‚ darling‚ you look perfect tonight",
+                "[03:26.41]Baby‚ I am dancing in the dark‚ with you between my arms",
+                "[03:37.61]Barefoot on the grass‚ listening to our favorite song",
+                "[03:44.70]I have faith in what I see",
+                "[03:48.31]Now I know I have met an angel in person",
+                "[03:54.41]And she looks perfect‚ I don′t deserve this",
+                "[04:02.31]You look perfect tonight"
                 ])
         default:
             lineStrings.append("")

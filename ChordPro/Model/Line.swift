@@ -72,6 +72,7 @@ class Line {
             hasChord = true
             chord = Chord(String(str[str.index(str[str.range(of: "{{")!].startIndex, offsetBy: 2)..<str.index(endIndex, offsetBy: -2)]))
         }
+        // TODO use dropfirst here
         if hasTimeStamp {
             if hasChord {
                 word = String(str[str.index(str.startIndex, offsetBy: 10)..<str.index(str[str.range(of: "{{")!].startIndex, offsetBy: 0)])

@@ -16,7 +16,9 @@
 		FF76C08622F57E4B005254F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF76C08522F57E4B005254F5 /* Assets.xcassets */; };
 		FF76C08922F57E4B005254F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF76C08722F57E4B005254F5 /* LaunchScreen.storyboard */; };
 		FF76C09222F585D8005254F5 /* All Too Well.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF76C09122F585D8005254F5 /* All Too Well.mp3 */; };
-		FFB890D822F591F2002337EA /* Somebody's Daughter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFB890D722F591F2002337EA /* Somebody's Daughter.mp3 */; };
+		FF7A238422F992E900012CE2 /* Perfect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FF7A238322F992E900012CE2 /* Perfect.m4a */; };
+		FF7A238622F9938600012CE2 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A238522F9938600012CE2 /* SongTableViewController.swift */; };
+		FF7A238822F9941700012CE2 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A238722F9941700012CE2 /* SongTableViewCell.swift */; };
 		FFB890DA22F592DE002337EA /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB890D922F592DE002337EA /* Song.swift */; };
 		FFB890DC22F592EF002337EA /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB890DB22F592EF002337EA /* Chord.swift */; };
 		FFB890DE22F59322002337EA /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB890DD22F59322002337EA /* Line.swift */; };
@@ -34,7 +36,9 @@
 		FF76C08822F57E4B005254F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF76C08A22F57E4B005254F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF76C09122F585D8005254F5 /* All Too Well.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "All Too Well.mp3"; sourceTree = "<group>"; };
-		FFB890D722F591F2002337EA /* Somebody's Daughter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Somebody's Daughter.mp3"; sourceTree = "<group>"; };
+		FF7A238322F992E900012CE2 /* Perfect.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Perfect.m4a; sourceTree = "<group>"; };
+		FF7A238522F9938600012CE2 /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SongTableViewController.swift; path = ChordPro/SongTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		FF7A238722F9941700012CE2 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		FFB890D922F592DE002337EA /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		FFB890DB22F592EF002337EA /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
 		FFB890DD22F59322002337EA /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -66,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				FF76C08222F57E4A005254F5 /* Main.storyboard */,
-				FF49807722F6C5450032F04E /* LyricTableViewCell.swift */,
 				FF76C08722F57E4B005254F5 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
@@ -91,9 +94,12 @@
 		FF76C07D22F57E4A005254F5 /* ChordPro */ = {
 			isa = PBXGroup;
 			children = (
-				FF76C07E22F57E4A005254F5 /* AppDelegate.swift */,
+				FF7A238522F9938600012CE2 /* SongTableViewController.swift */,
+				FF7A238722F9941700012CE2 /* SongTableViewCell.swift */,
 				FF76C08022F57E4A005254F5 /* LyricViewController.swift */,
+				FF49807722F6C5450032F04E /* LyricTableViewCell.swift */,
 				FF306A1322F845D9005FADA9 /* ChordViewController.swift */,
+				FF76C07E22F57E4A005254F5 /* AppDelegate.swift */,
 				FF089D8122F5B0D80066B988 /* Model */,
 				FF49807422F6B1DE0032F04E /* StoryBoards */,
 				FF76C09022F5857C005254F5 /* Music */,
@@ -106,8 +112,8 @@
 		FF76C09022F5857C005254F5 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				FF7A238322F992E900012CE2 /* Perfect.m4a */,
 				FF76C09122F585D8005254F5 /* All Too Well.mp3 */,
-				FFB890D722F591F2002337EA /* Somebody's Daughter.mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -175,10 +181,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB890D822F591F2002337EA /* Somebody's Daughter.mp3 in Resources */,
 				FF76C08922F57E4B005254F5 /* LaunchScreen.storyboard in Resources */,
 				FF76C09222F585D8005254F5 /* All Too Well.mp3 in Resources */,
 				FF76C08622F57E4B005254F5 /* Assets.xcassets in Resources */,
+				FF7A238422F992E900012CE2 /* Perfect.m4a in Resources */,
 				FF76C08422F57E4A005254F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +197,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB890DA22F592DE002337EA /* Song.swift in Sources */,
+				FF7A238622F9938600012CE2 /* SongTableViewController.swift in Sources */,
+				FF7A238822F9941700012CE2 /* SongTableViewCell.swift in Sources */,
 				FF089D8322F5C2220066B988 /* SongFactory.swift in Sources */,
 				FF76C08122F57E4A005254F5 /* LyricViewController.swift in Sources */,
 				FF306A1422F845D9005FADA9 /* ChordViewController.swift in Sources */,

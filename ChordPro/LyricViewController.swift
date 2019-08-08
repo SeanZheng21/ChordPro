@@ -11,7 +11,7 @@ import AVFoundation
 
 class LyricViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    static let START_TIME: Double = 15.0
+    static let START_TIME: Double = 17.0
     var song: Song = Song("All Too Well", "Red", "Taylor Swift", "C G Am F")
     var timer: Timer = Timer()
     var audioPlayer = AVAudioPlayer()
@@ -22,7 +22,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
         do {
-            let songURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: song.name, ofType: "mp3")!)
+            let songURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: song.name, ofType: song.format)!)
             audioPlayer = try AVAudioPlayer(contentsOf: songURL)
             audioPlayer.prepareToPlay()
             audioPlayer.currentTime = LyricViewController.START_TIME
@@ -36,10 +36,13 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         timer.tolerance = 0.1
         timer.invalidate()
         
-        song.lyric = SongFactory.getLyric(of: song.name)
         song.duration = audioPlayer.duration
         navigationItem.title = song.name
         artworkImageView.image = song.artwork
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        audioPlayer.stop()
     }
 
     @IBOutlet weak var chordLabel: UILabel!
@@ -123,14 +126,43 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         // return the number of rows
         return song.lyric.count
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(80)
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "lyricLine", for: indexPath) as! LyricTableViewCell
-     // Configure the cell...
-     cell.textLabel?.text = song.lyric[indexPath.row].text
-     return cell
-     }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "lyricLine", for: indexPath) as! LyricTableViewCell
+        // Configure the cell...
+        let chordAttribute = [ NSAttributedString.Key.foregroundColor: UIColor.blue,
+                            NSAttributedString.Key.backgroundColor: UIColor.yellow,
+                            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: CGFloat(17.0))]
+        let textAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(17.0))]
+        
+        var wordString = ""
+        var chordString = NSMutableAttributedString(string: "")
+        if song.lyric[indexPath.row].isStrumming {
+            wordString = song.lyric[indexPath.row].text
+        } else {
+            for (_, word, chord) in song.lyric[indexPath.row].words {
+                wordString.append(contentsOf: word + " ")
+                if let c = chord {
+                    chordString.append(NSAttributedString(string: c.name, attributes: chordAttribute))
+                    chordString.append( NSAttributedString(string: String(repeating: " ",
+                            count: Int(Double(word.count) * 1.7) - c.name.count + 2), attributes: textAttribute))
+                } else {
+                    chordString.append(NSAttributedString(string: String(repeating: " ",
+                            count: Int(Double(word.count) * 1.7) + 2), attributes: textAttribute))
+                }
+            }
+        }
+//        let attributedText = NSAttributedString(string: chordString, attributes: chordAttribute)
+//        cell.textView.isEditable = false
+//        cell.textView.attributedText = attributedText
+        cell.chordLabel?.attributedText = chordString
+        cell.lyricLabel.text = wordString
+        return cell
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let timeStamp = song.lyric[indexPath.row].words[0].0 {
@@ -143,6 +175,9 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
+    @IBAction func handleTableSwipeUp(_ sender: UISwipeGestureRecognizer) {
+        print("Swiping")
+    }
     
     
      // MARK: - Navigation

@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 class Song {
+    enum Difficulity: String {
+        case easy = "easy"
+        case medium = "medium"
+        case hard = "hard"
+    }
     
     let name: String
     let album: String
@@ -17,18 +22,22 @@ class Song {
     var duration: Double?
     var progression: String?
     var capo: Int
+    var difficulty: Difficulity
+    var format: String
     
     var lyric: [Line]
     
-    init(_ name: String, _ album: String, _ artist: String, _ progression: String, _ capo: Int = 0) {
+    init(_ name: String, _ album: String, _ artist: String, _ progression: String, _ capo: Int = 0, _ difficulty: Difficulity = .medium, _ format: String = "mp3") {
         self.name = name
         self.album = album
         self.artist = artist
         self.duration = 0
         self.artwork = UIImage(named: name)
-        self.lyric = []
+        self.lyric = SongFactory.getLyric(of: name)
         self.capo = capo
         self.progression = progression
+        self.difficulty = difficulty
+        self.format = format
     }
     
     convenience init() {
