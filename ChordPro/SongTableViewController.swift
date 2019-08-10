@@ -47,6 +47,7 @@ class SongTableViewController: UITableViewController {
         cell.albumLabel.text = song.album
         cell.chordLabel.text = "Chords: " + (song.progression ?? "")
         cell.difficultyImageView.image = UIImage(named: song.difficulty.rawValue)
+        cell.likeButton.setImage(UIImage(named: (song.like ? "like" : "unlike")), for: .normal)
         let formatter = NumberFormatter()
         formatter.numberStyle = .ordinal
         let ordinalStr = formatter.string(from: NSNumber(integerLiteral: song.capo))
@@ -58,6 +59,48 @@ class SongTableViewController: UITableViewController {
         return CGFloat(SongTableViewController.CELL_HEIGHT)
     }
     
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            songs.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
+//    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            self.songs.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHandler(true)
+        }
+        let likeAction = UIContextualAction(style: .normal, title: "Like") { (action, sourceView, completionHandler) in
+            if self.songs[indexPath.row].like {
+                self.songs[indexPath.row].like = false
+                (self.tableView.cellForRow(at: indexPath) as! SongTableViewCell).likeButton.setImage(UIImage(named: "unlike"), for: .normal)
+            } else {
+                self.songs[indexPath.row].like = true
+                (self.tableView.cellForRow(at: indexPath) as! SongTableViewCell).likeButton.setImage(UIImage(named: "like"), for: .normal)
+            }
+            completionHandler(true)
+        }
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
+            let defaultText = "I have been practicing the song " + self.songs[indexPath.row].name
+            let activityController: UIActivityViewController
+            if let imageToShare = self.songs[indexPath.row].artwork {
+                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+            } else {
+                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            }
+            self.present(activityController, animated: true, completion: nil)
+            completionHandler(true)
+        }
+        likeAction.backgroundColor = #colorLiteral(red: 1, green: 0.1857388616, blue: 0.5733950138, alpha: 1)
+        shareAction.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        likeAction.image = UIImage(named: "like_small")
+        shareAction.image = UIImage(named: "share")
+        deleteAction.image = UIImage(named: "delete")
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, likeAction, shareAction])
+        return swipeConfiguration
+    }
 
     /*
     // Override to support conditional editing of the table view.

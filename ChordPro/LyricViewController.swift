@@ -42,7 +42,9 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        audioPlayer.stop()
+        playPauseButton.setImage(UIImage(named: "play"), for: .normal)
+        audioPlayer.pause()
+        timer.invalidate()
     }
 
     @IBOutlet weak var chordLabel: UILabel!
@@ -140,7 +142,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         let textAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(17.0))]
         
         var wordString = ""
-        var chordString = NSMutableAttributedString(string: "")
+        let chordString = NSMutableAttributedString(string: "")
         if song.lyric[indexPath.row].isStrumming {
             wordString = song.lyric[indexPath.row].text
         } else {

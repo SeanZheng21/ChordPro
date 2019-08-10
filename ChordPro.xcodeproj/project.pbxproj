@@ -10,10 +10,10 @@
 		FF089D8322F5C2220066B988 /* SongFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF089D8222F5C2220066B988 /* SongFactory.swift */; };
 		FF306A1422F845D9005FADA9 /* ChordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF306A1322F845D9005FADA9 /* ChordViewController.swift */; };
 		FF49807822F6C5450032F04E /* LyricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49807722F6C5450032F04E /* LyricTableViewCell.swift */; };
+		FF4DD60822FECDD6004EF87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4DD60722FECDD6004EF87C /* Assets.xcassets */; };
 		FF76C07F22F57E4A005254F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76C07E22F57E4A005254F5 /* AppDelegate.swift */; };
 		FF76C08122F57E4A005254F5 /* LyricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76C08022F57E4A005254F5 /* LyricViewController.swift */; };
 		FF76C08422F57E4A005254F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF76C08222F57E4A005254F5 /* Main.storyboard */; };
-		FF76C08622F57E4B005254F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF76C08522F57E4B005254F5 /* Assets.xcassets */; };
 		FF76C08922F57E4B005254F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF76C08722F57E4B005254F5 /* LaunchScreen.storyboard */; };
 		FF76C09222F585D8005254F5 /* All Too Well.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF76C09122F585D8005254F5 /* All Too Well.mp3 */; };
 		FF7A238422F992E900012CE2 /* Perfect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FF7A238322F992E900012CE2 /* Perfect.m4a */; };
@@ -28,11 +28,11 @@
 		FF089D8222F5C2220066B988 /* SongFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFactory.swift; sourceTree = "<group>"; };
 		FF306A1322F845D9005FADA9 /* ChordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordViewController.swift; sourceTree = "<group>"; };
 		FF49807722F6C5450032F04E /* LyricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LyricTableViewCell.swift; path = ChordPro/LyricTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		FF4DD60722FECDD6004EF87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF76C07B22F57E4A005254F5 /* ChordPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF76C07E22F57E4A005254F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF76C08022F57E4A005254F5 /* LyricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricViewController.swift; sourceTree = "<group>"; };
 		FF76C08322F57E4A005254F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FF76C08522F57E4B005254F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF76C08822F57E4B005254F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF76C08A22F57E4B005254F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF76C09122F585D8005254F5 /* All Too Well.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "All Too Well.mp3"; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 				FF089D8122F5B0D80066B988 /* Model */,
 				FF49807422F6B1DE0032F04E /* StoryBoards */,
 				FF76C09022F5857C005254F5 /* Music */,
-				FF76C08522F57E4B005254F5 /* Assets.xcassets */,
 				FF76C08A22F57E4B005254F5 /* Info.plist */,
+				FF4DD60722FECDD6004EF87C /* Assets.xcassets */,
 			);
 			path = ChordPro;
 			sourceTree = "<group>";
@@ -183,9 +183,9 @@
 			files = (
 				FF76C08922F57E4B005254F5 /* LaunchScreen.storyboard in Resources */,
 				FF76C09222F585D8005254F5 /* All Too Well.mp3 in Resources */,
-				FF76C08622F57E4B005254F5 /* Assets.xcassets in Resources */,
 				FF7A238422F992E900012CE2 /* Perfect.m4a in Resources */,
 				FF76C08422F57E4A005254F5 /* Main.storyboard in Resources */,
+				FF4DD60822FECDD6004EF87C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C9Z965MBZG;
 				INFOPLIST_FILE = ChordPro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C9Z965MBZG;
 				INFOPLIST_FILE = ChordPro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

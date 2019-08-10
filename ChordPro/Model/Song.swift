@@ -24,6 +24,7 @@ class Song {
     var capo: Int
     var difficulty: Difficulity
     var format: String
+    var like: Bool
     
     var lyric: [Line]
     
@@ -38,6 +39,7 @@ class Song {
         self.progression = progression
         self.difficulty = difficulty
         self.format = format
+        self.like = false
     }
     
     convenience init() {

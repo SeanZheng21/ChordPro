@@ -28,6 +28,7 @@ class SongTableViewCell: UITableViewCell {
     @IBOutlet weak var chordLabel: UILabel!
     @IBOutlet weak var capoLabel: UILabel!
     @IBOutlet weak var difficultyImageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
     
     
     

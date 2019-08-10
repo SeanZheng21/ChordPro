@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AbL-zi-1eh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LfH-wo-YEs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -61,7 +61,7 @@
                                 </connections>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plX-L3-aG2" userLabel="Chord Player View">
-                                <rect key="frame" x="10" y="592" width="355" height="60"/>
+                                <rect key="frame" x="10" y="543" width="355" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="39A-kY-dsy">
                                         <rect key="frame" x="2" y="2" width="351" height="56"/>
@@ -135,7 +135,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-RQ-Ziu">
-                                <rect key="frame" x="10" y="156" width="355" height="426"/>
+                                <rect key="frame" x="10" y="156" width="355" height="377"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <prototypes>
@@ -222,7 +222,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1932" y="27.436281859070466"/>
+            <point key="canvasLocation" x="2871.1999999999998" y="27.436281859070466"/>
         </scene>
         <!--Chord View Controller-->
         <scene sceneID="aha-mY-tyj">
@@ -257,7 +257,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NJr-2l-8ll">
-                                <rect key="frame" x="102.5" y="588" width="170" height="49"/>
+                                <rect key="frame" x="102.5" y="539" width="170" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Progression" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXY-XW-bfS">
                                         <rect key="frame" x="14" y="0.0" width="142.5" height="20.5"/>
@@ -294,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJp-EH-i6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2776.8000000000002" y="26.53673163418291"/>
+            <point key="canvasLocation" x="3716" y="26.53673163418291"/>
         </scene>
         <!--Songs-->
         <scene sceneID="eTt-pv-BPA">
@@ -313,7 +313,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rwE-Oj-GL7" userLabel="Main Stack View">
-                                            <rect key="frame" x="16" y="11" width="268" height="100"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="100"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pq0-4H-B3m">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -323,7 +323,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-OW-AZQ" userLabel="Right Stack View">
-                                                    <rect key="frame" x="108" y="0.0" width="160" height="100"/>
+                                                    <rect key="frame" x="108" y="0.0" width="175" height="100"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1g-0S-wuX">
                                                             <rect key="frame" x="0.0" y="0.0" width="68.5" height="43"/>
@@ -345,6 +345,33 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e9N-sJ-3hr">
+                                                    <rect key="frame" x="291" y="0.0" width="52" height="100"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="czk-ks-iUk" userLabel="Difficulty Image View">
+                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="czk-ks-iUk" secondAttribute="height" multiplier="1:1" id="db8-a5-jaH"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbu-C7-dyw">
+                                                            <rect key="frame" x="12" y="60" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="jbu-C7-dyw" secondAttribute="height" multiplier="1:1" id="0tc-8q-8mM"/>
+                                                                <constraint firstAttribute="width" constant="40" id="rZC-1X-AEm"/>
+                                                            </constraints>
+                                                            <state key="normal" image="like"/>
+                                                            <connections>
+                                                                <action selector="likeButton:" destination="sNK-wv-s1E" eventType="touchUpInside" id="LR9-x9-9d7"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="czk-ks-iUk" firstAttribute="leading" secondItem="e9N-sJ-3hr" secondAttribute="leading" id="Kht-06-XYm"/>
+                                                        <constraint firstItem="czk-ks-iUk" firstAttribute="top" secondItem="e9N-sJ-3hr" secondAttribute="top" id="aEY-qM-KST"/>
+                                                        <constraint firstAttribute="trailing" secondItem="czk-ks-iUk" secondAttribute="trailing" id="kEg-yc-g7l"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i70-Kh-Sxp" userLabel="Bottum Stack View">
@@ -364,24 +391,15 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="czk-ks-iUk" userLabel="Difficulty Image View">
-                                            <rect key="frame" x="284" y="16" width="70" height="70"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="70" id="Mix-7I-YvD"/>
-                                                <constraint firstAttribute="width" secondItem="czk-ks-iUk" secondAttribute="height" multiplier="1:1" id="db8-a5-jaH"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="i70-Kh-Sxp" secondAttribute="bottom" constant="5" id="78c-sh-zcs"/>
                                         <constraint firstItem="i70-Kh-Sxp" firstAttribute="leading" secondItem="MFg-ql-GDt" secondAttribute="leadingMargin" constant="5" id="8sm-lN-j4b"/>
                                         <constraint firstItem="rwE-Oj-GL7" firstAttribute="leading" secondItem="MFg-ql-GDt" secondAttribute="leadingMargin" id="GfQ-F7-O4h"/>
                                         <constraint firstItem="i70-Kh-Sxp" firstAttribute="top" secondItem="rwE-Oj-GL7" secondAttribute="bottom" constant="2" id="iZh-Hh-1jB"/>
-                                        <constraint firstItem="czk-ks-iUk" firstAttribute="leading" secondItem="rwE-Oj-GL7" secondAttribute="trailing" id="py7-PB-anT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rwE-Oj-GL7" secondAttribute="trailing" id="qns-Ew-vgs"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="i70-Kh-Sxp" secondAttribute="trailing" constant="5" id="tAJ-X7-YQC"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="czk-ks-iUk" secondAttribute="trailing" constant="5" id="u1i-Nm-6Ii"/>
                                         <constraint firstItem="rwE-Oj-GL7" firstAttribute="top" secondItem="MFg-ql-GDt" secondAttribute="topMargin" id="wtz-4f-ITt"/>
-                                        <constraint firstItem="czk-ks-iUk" firstAttribute="top" secondItem="MFg-ql-GDt" secondAttribute="topMargin" constant="5" id="xPb-s6-Tp2"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -391,6 +409,7 @@
                                     <outlet property="capoLabel" destination="uY8-El-A7T" id="trb-G6-NkJ"/>
                                     <outlet property="chordLabel" destination="sR8-Lf-ZlV" id="Uqm-HJ-Yfn"/>
                                     <outlet property="difficultyImageView" destination="czk-ks-iUk" id="BmH-4o-N45"/>
+                                    <outlet property="likeButton" destination="jbu-C7-dyw" id="rt5-7K-Qr9"/>
                                     <outlet property="songNameLabel" destination="w1g-0S-wuX" id="tzg-AD-KNl"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="songChosenSegue" id="QA5-UE-7bk"/>
                                 </connections>
@@ -405,12 +424,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hI5-pX-cyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040.8" y="26.53673163418291"/>
+            <point key="canvasLocation" x="1980" y="26.53673163418291"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Song-->
         <scene sceneID="AAH-YQ-ZNu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AbL-zi-1eh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Song" id="Fui-Dq-zup"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wje-QC-5zL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -423,11 +443,67 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRi-3D-Ria" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1040.8" y="26.53673163418291"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yhn-3B-BPl">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="LfH-wo-YEs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4ZL-0h-xeK">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="AbL-zi-1eh" kind="relationship" relationship="viewControllers" id="qMK-53-eQ7"/>
+                        <segue destination="7Cg-OB-FoN" kind="relationship" relationship="viewControllers" id="ObU-cX-Ftr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z35-sw-hRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="101.59999999999999" y="26.53673163418291"/>
+        </scene>
+        <!--Chord-->
+        <scene sceneID="4lz-SD-8OI">
+            <objects>
+                <collectionViewController id="7Cg-OB-FoN" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gga-7I-K98">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nkE-ti-i4H">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="chordCollectionViewCell" id="czW-dY-ahh">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="7Cg-OB-FoN" id="ByC-Nv-vL6"/>
+                            <outlet property="delegate" destination="7Cg-OB-FoN" id="BjI-Bx-GNl"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Chord" selectedImage="chord" id="Bwn-dC-wqo"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLK-P0-nES" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="860"/>
         </scene>
     </scenes>
     <resources>
         <image name="C" width="100" height="120"/>
+        <image name="chord" width="30" height="30"/>
+        <image name="like" width="40" height="40"/>
         <image name="play" width="512" height="512"/>
         <image name="restart" width="1024" height="1024"/>
     </resources>
