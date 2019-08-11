@@ -25,7 +25,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             let songURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: song.name, ofType: song.format)!)
             audioPlayer = try AVAudioPlayer(contentsOf: songURL)
             audioPlayer.prepareToPlay()
-            audioPlayer.currentTime = LyricViewController.START_TIME
+//            audioPlayer.currentTime = LyricViewController.START_TIME
             // Make the audio available
             let audioSession = AVAudioSession.sharedInstance()
             try audioSession.setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
