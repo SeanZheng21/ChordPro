@@ -11,7 +11,7 @@ import AVFoundation
 
 class LyricViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    static let START_TIME: Double = 17.0
+    static let START_TIME: Double = 270.0
     var song: Song = Song("All Too Well", "Red", "Taylor Swift", "C G Am F")
     var timer: Timer = Timer()
     var audioPlayer = AVAudioPlayer()

@@ -66,6 +66,7 @@ class SongTableViewController: UITableViewController {
 //        }
 //    }
     
+    @available(iOS 11.0, *)
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
             self.songs.remove(at: indexPath.row)
