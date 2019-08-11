@@ -17,16 +17,35 @@ class ChordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chordNameLabel.text = "Chord: \(chord?.name ?? "nil")"
-        chordImage.image = UIImage(named: chord?.name ?? "C")
+        chordImage.image = UIImage(named: (chord?.name == nil || chord?.name == "") ? "NC" : (chord?.name)!)
         strummingLabel.text = strumming
         progressionLabel.text = song?.progression
-        // Do any additional setup after loading the view.
+        songNameLabel.text = "\(song?.name ?? "This song")'s chord progression:"
+        setChordProgressionImages(to: song?.progression ?? "")
     }
     
     @IBOutlet weak var chordNameLabel: UILabel!
     @IBOutlet weak var chordImage: UIImageView!
     @IBOutlet weak var strummingLabel: UILabel!
     @IBOutlet weak var progressionLabel: UILabel!
+    @IBOutlet weak var songNameLabel: UILabel!
+    @IBOutlet var chordProgressionCollectionImageView: [UIImageView]!
+    @IBOutlet var chordProgressionCollectionLabel: [UILabel]!
+    
+    func setChordProgressionImages(to progression: String) {
+        var songChords = progression.split(separator: " ")
+        if songChords.count >= 4 {
+            for i in 0..<4 {
+                chordProgressionCollectionImageView[i].image = UIImage(named: String(songChords[i]))
+                chordProgressionCollectionLabel[i].text = String(songChords[i])
+            }
+        } else {
+            for i in 0..<songChords.count {
+                chordProgressionCollectionImageView[i].image = UIImage(named: String(songChords[i]))
+            }
+        }
+
+    }
     
     /*
     // MARK: - Navigation
