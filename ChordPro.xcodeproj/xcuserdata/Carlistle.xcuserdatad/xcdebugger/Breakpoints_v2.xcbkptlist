@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChordPro/LyricViewController.swift"
-            timestampString = "587228921.488094"
+            timestampString = "587560700.480881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "playPause(_:)"
             landmarkType = "7">
          </BreakpointContent>

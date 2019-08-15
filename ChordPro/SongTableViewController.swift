@@ -150,10 +150,31 @@ class SongTableViewController: UITableViewController {
                 if let lyricVC = segue.destination as? LyricViewController {
                     lyricVC.song = songs[tableView.indexPathForSelectedRow!.row]
                 }
+            case "addSongSegue":
+                if let _ = segue.destination as? AddSongTableViewController {
+//                    let newSong = Song()
+//                    addSongVC.song = newSong
+//                    songs.append(newSong)
+                }
             default:
                 print("Unknown segue identifier: \(identifier)")
             }
         }
+    }
+    
+    @IBAction func unwindToSongTableView(_ sender: UIStoryboardSegue) {
+        switch sender.identifier {
+        case "unwindAddSong":
+            if let addSongTableViewController = sender.source as? AddSongTableViewController {
+                let songToAdd = addSongTableViewController.song
+                self.songs.append(songToAdd)
+                self.tableView.reloadData()
+            }
+        default:
+            // Do nothing
+            let _ = true
+        }
+        
     }
 
 }

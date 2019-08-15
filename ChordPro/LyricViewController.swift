@@ -22,13 +22,22 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
         do {
-            let songURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: song.name, ofType: song.format)!)
-            audioPlayer = try AVAudioPlayer(contentsOf: songURL)
-            audioPlayer.prepareToPlay()
-//            audioPlayer.currentTime = LyricViewController.START_TIME
-            // Make the audio available
-            let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
+            if let path = Bundle.main.path(forResource: song.name, ofType: song.format) {
+                let songURL = URL.init(fileURLWithPath: path)
+                audioPlayer = try AVAudioPlayer(contentsOf: songURL)
+                audioPlayer.prepareToPlay()
+                song.duration = audioPlayer.duration
+                //            audioPlayer.currentTime = LyricViewController.START_TIME
+                // Make the audio available
+                let audioSession = AVAudioSession.sharedInstance()
+                try audioSession.setCategory(.playback, mode: .default, options: [.allowAirPlay, .allowBluetooth, .defaultToSpeaker])
+            } else {
+                let alertController = UIAlertController(title: "Fail to load song", message: "The song \(song.name) can't be found in your library", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Go Back", style: .default, handler: { alertAction in
+                    self.navigationController?.popViewController(animated: true)
+                    }))
+                present(alertController, animated: true, completion: nil)
+            }
         } catch {
             print("Error in audio player init: \(error)")
         }
@@ -36,7 +45,6 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         timer.tolerance = 0.1
         timer.invalidate()
         
-        song.duration = audioPlayer.duration
         navigationItem.title = song.name
         artworkImageView.image = song.artwork
     }

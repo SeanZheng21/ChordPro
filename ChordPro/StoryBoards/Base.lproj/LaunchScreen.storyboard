@@ -19,17 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LdL-kq-SPD">
-                                <rect key="frame" x="91.5" y="131.5" width="192" height="404.5"/>
+                                <rect key="frame" x="91.5" y="103.5" width="192" height="460.5"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChordPro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm2-3W-fSx">
+                                        <rect key="frame" x="35" y="0.0" width="122.5" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_icon" translatesAutoresizingMaskIntoConstraints="NO" id="5VW-em-xT5">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="192"/>
+                                        <rect key="frame" x="0.0" y="56" width="192" height="192"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="192" id="h9f-Jj-B30"/>
                                             <constraint firstAttribute="width" secondItem="5VW-em-xT5" secondAttribute="height" multiplier="1:1" id="j6N-G9-nfJ"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="whd-RN-4rE">
-                                        <rect key="frame" x="7" y="212" width="178" height="192.5"/>
+                                        <rect key="frame" x="7" y="268" width="178" height="192.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Better Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruE-Un-BiH">
                                                 <rect key="frame" x="21.5" y="0.0" width="135" height="57.5"/>
