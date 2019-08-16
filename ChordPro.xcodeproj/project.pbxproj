@@ -13,6 +13,8 @@
 		FF306A1422F845D9005FADA9 /* ChordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF306A1322F845D9005FADA9 /* ChordViewController.swift */; };
 		FF49807822F6C5450032F04E /* LyricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49807722F6C5450032F04E /* LyricTableViewCell.swift */; };
 		FF4DD60822FECDD6004EF87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4DD60722FECDD6004EF87C /* Assets.xcassets */; };
+		FF5C7D532306D39D00FD5802 /* ProgressionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C7D522306D39D00FD5802 /* ProgressionTableViewController.swift */; };
+		FF5C7D552306D8CE00FD5802 /* ProgressionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C7D542306D8CE00FD5802 /* ProgressionTableViewCell.swift */; };
 		FF76C07F22F57E4A005254F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76C07E22F57E4A005254F5 /* AppDelegate.swift */; };
 		FF76C08122F57E4A005254F5 /* LyricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF76C08022F57E4A005254F5 /* LyricViewController.swift */; };
 		FF76C08422F57E4A005254F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF76C08222F57E4A005254F5 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		FF306A1322F845D9005FADA9 /* ChordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordViewController.swift; sourceTree = "<group>"; };
 		FF49807722F6C5450032F04E /* LyricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LyricTableViewCell.swift; path = ChordPro/LyricTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		FF4DD60722FECDD6004EF87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF5C7D522306D39D00FD5802 /* ProgressionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewController.swift; sourceTree = "<group>"; };
+		FF5C7D542306D8CE00FD5802 /* ProgressionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewCell.swift; sourceTree = "<group>"; };
 		FF76C07B22F57E4A005254F5 /* ChordPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF76C07E22F57E4A005254F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF76C08022F57E4A005254F5 /* LyricViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 		FF76C07D22F57E4A005254F5 /* ChordPro */ = {
 			isa = PBXGroup;
 			children = (
+				FF5C7D542306D8CE00FD5802 /* ProgressionTableViewCell.swift */,
+				FF5C7D522306D39D00FD5802 /* ProgressionTableViewController.swift */,
 				FF8D1AC82306929400BDDA39 /* ChordPopoverViewController.swift */,
 				FFC8965123052B160013CF9D /* AddSongTableViewController.swift */,
 				FF79216C23000634006C78B3 /* ChordCollectionReusableView.swift */,
@@ -231,11 +237,13 @@
 				FF79216922FFE839006C78B3 /* ChordLibraryCollectionViewController.swift in Sources */,
 				FF1DB01E2306B2DD00481765 /* Progression.swift in Sources */,
 				FF76C08122F57E4A005254F5 /* LyricViewController.swift in Sources */,
+				FF5C7D552306D8CE00FD5802 /* ProgressionTableViewCell.swift in Sources */,
 				FF8D1AC92306929400BDDA39 /* ChordPopoverViewController.swift in Sources */,
 				FF306A1422F845D9005FADA9 /* ChordViewController.swift in Sources */,
 				FFB890DC22F592EF002337EA /* Chord.swift in Sources */,
 				FF76C07F22F57E4A005254F5 /* AppDelegate.swift in Sources */,
 				FFB890DE22F59322002337EA /* Line.swift in Sources */,
+				FF5C7D532306D39D00FD5802 /* ProgressionTableViewController.swift in Sources */,
 				FF49807822F6C5450032F04E /* LyricTableViewCell.swift in Sources */,
 				FF1DB01C2306B2D000481765 /* ProgressionFactory.swift in Sources */,
 			);
