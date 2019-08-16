@@ -25,10 +25,11 @@ class Song {
     var difficulty: Difficulity
     var format: String
     var like: Bool
+    var videoURL: String?
     
     var lyric: [Line]
     
-    init(_ name: String, _ album: String, _ artist: String, _ progression: String, _ capo: Int = 0, _ difficulty: Difficulity = .medium, _ format: String = "mp3") {
+    init(_ name: String, _ album: String, _ artist: String, _ progression: String, _ capo: Int = 0, _ difficulty: Difficulity = .medium, _ format: String = "mp3", like: Bool = false, videoURL: String = "") {
         self.name = name
         self.album = album
         self.artist = artist
@@ -39,7 +40,8 @@ class Song {
         self.progression = progression
         self.difficulty = difficulty
         self.format = format
-        self.like = false
+        self.like = like
+        self.videoURL = videoURL
     }
     
     convenience init() {

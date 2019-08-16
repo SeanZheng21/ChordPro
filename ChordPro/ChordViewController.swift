@@ -17,7 +17,7 @@ class ChordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chordNameLabel.text = "Chord: \(chord?.name ?? "nil")"
-        chordImage.image = UIImage(named: (chord?.name == nil || chord?.name == "") ? "NC" : (chord?.name)!)
+        chordImage.image = UIImage(named: (chord?.name == nil || chord?.name == "") ? "NC" : "chord_" + (chord?.name)!)
         strummingLabel.text = strumming
         progressionLabel.text = song?.progression
         songNameLabel.text = "\(song?.name ?? "This song")'s chord progression:"

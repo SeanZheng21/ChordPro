@@ -24,15 +24,30 @@ class ChordLibraryCollectionViewController: UICollectionViewController {
         self.chords = ChordFactory.getChords()
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "chordPopoverSegue":
+                if let vc = segue.destination as? ChordPopoverViewController {
+//                    if let ppc = vc.popoverPresentationController {
+//                        ppc.permittedArrowDirections = .any
+////                        ppc.delegate = self
+//                    }
+                    if let chordCell = sender as? ChordLibraryCollectionViewCell {
+                        vc.chord = Chord(chordCell.nameLabel.text ?? "")
+                    }
+                }
+            default: break
+            }
+        }
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
 
@@ -74,12 +89,16 @@ class ChordLibraryCollectionViewController: UICollectionViewController {
         // Configure the cell
         let chordName = self.chords[indexPath.section][indexPath.row].name
         cell.nameLabel.text = chordName
-        cell.chordImage.image = UIImage(named: chordName)
+        cell.chordImage.image = UIImage(named: "chord_" + chordName)
         cell.sizeThatFits(CGSize(width: 80, height: 80))
         return cell
     }
 
     // MARK: UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "chordPopoverSegue", sender: collectionView.cellForItem(at: indexPath))
+    }
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking

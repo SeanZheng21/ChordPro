@@ -20,7 +20,7 @@ class SongTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
     @IBOutlet weak var artworkImageView: UIImageView!
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
@@ -29,7 +29,9 @@ class SongTableViewCell: UITableViewCell {
     @IBOutlet weak var capoLabel: UILabel!
     @IBOutlet weak var difficultyImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var videoButton: UIButton!
     
+    var videoLink: String? = ""
     
     
 }

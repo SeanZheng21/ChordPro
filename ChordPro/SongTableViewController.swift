@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SongTableViewController: UITableViewController {
     
@@ -15,8 +16,8 @@ class SongTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        songs.append(Song("Perfect", "Divide", "Ed Sheeran", "G Em C D", 1, .easy, "m4a"))
-        songs.append(Song("All Too Well", "Red", "Taylor Swift", "C G Am F"))
+        songs.append(Song("Perfect", "Divide", "Ed Sheeran", "G Em C D", 1, .easy, "m4a", videoURL: "https://www.youtube.com/watch?v=8NODy7CMzb0"))
+        songs.append(Song("All Too Well", "Red", "Taylor Swift", "C G Am F", like: true, videoURL: "https://www.youtube.com/watch?v=9d0CdE9KVrI"))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -45,6 +46,8 @@ class SongTableViewController: UITableViewController {
         cell.songNameLabel.text = song.name
         cell.artistLabel.text = song.artist
         cell.albumLabel.text = song.album
+        cell.videoLink = song.videoURL
+        cell.videoButton.titleLabel?.text = song.videoURL
         cell.chordLabel.text = "Chords: " + (song.progression ?? "")
         cell.difficultyImageView.image = UIImage(named: song.difficulty.rawValue)
         cell.likeButton.setImage(UIImage(named: (song.like ? "like" : "unlike")), for: .normal)
@@ -159,6 +162,12 @@ class SongTableViewController: UITableViewController {
             default:
                 print("Unknown segue identifier: \(identifier)")
             }
+        }
+    }
+    @IBAction func startVideo(_ sender: UIButton) {
+        if let url = URL(string: sender.titleLabel?.text ?? "") {
+            let safariController = SFSafariViewController(url: url)
+            present(safariController, animated: true, completion: nil)
         }
     }
     

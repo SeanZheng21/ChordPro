@@ -154,12 +154,12 @@ class AddSongTableViewController: UITableViewController {
         case "unwindAddSong":
             if let songTableViewController = segue.destination as? SongTableViewController {
                 self.song = Song(nameTextField.text ?? "", albumTextField.text ?? "", artistTextField.text ?? "",
-                                 "\( chordOneText.text ?? "") \(chordTwoText.text ?? "")) \(chordThreeText.text ?? "") \(chordFourText.text ?? "")", selectedCapo,
+                                 "\( chordOneText.text ?? "") \(chordTwoText.text ?? "") \(chordThreeText.text ?? "") \(chordFourText.text ?? "")", selectedCapo,
                                  Song.Difficulity(rawValue: AddSongTableViewController.DIFFICULTY_OPTIONS[selectedDifficulty]!) ?? Song.Difficulity.easy)
                 songTableViewController.songs.append(self.song)
             }
         default:
-            let _ = true
+            break
         }
     }
  
