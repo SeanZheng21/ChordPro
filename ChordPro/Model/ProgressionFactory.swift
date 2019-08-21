@@ -30,28 +30,28 @@ class ProgressionFactory {
             Progression("A Fm D E"),
             Progression("C Am F G"),
             Progression("D Bm G A"),
-            Progression("E Cm A B"),
+            Progression("E Cm7 A B"),
             ],
             [ // I VI II V
             Progression("G Em Am D"),
             Progression("A Fm Bm E"),
             Progression("C Am Dm G"),
-            Progression("D Vm Em A"),
-            Progression("E Cm Fm B"),
+            Progression("D Bm Em A"),
+            Progression("E Cm7 Fm B"),
             ],
             [ // I IV VI V
             Progression("G C Em D"),
             Progression("A D Fm E"),
             Progression("C F Am G"),
             Progression("D G Bm A"),
-            Progression("E A Cm B"),
+            Progression("E A Cm7 B"),
             ],
             [ // I V VI IV
             Progression("G D Em C"),
             Progression("A E Fm D"),
             Progression("C G Am F"),
             Progression("D A Bm G"),
-            Progression("E B Cm A")
+            Progression("E B Cm7 A")
             ]
         ])
         return progressions

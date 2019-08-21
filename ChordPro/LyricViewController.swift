@@ -115,7 +115,9 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             isStrumming = true
         }
         if let cT = chordText, !isStrumming, chordLabel.text != cT {
-            chordLabel.text = cT
+            if !isStrumming {
+                chordLabel.text = cT
+            }
             self.chordLabel.textColor = (self.chordLabel.textColor == #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1) ? #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1) : #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1))
             chordImage.image = UIImage(named: "chord_" + cT)
         }

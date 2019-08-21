@@ -93,14 +93,24 @@ class ProgressionTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "progressionDetalSegue":
+                if let progressionDetailVC = segue.destination as? ProgressionDetailTableViewController {
+                    progressionDetailVC.progression = self.progressions[tableView.indexPathForSelectedRow!.section][tableView.indexPathForSelectedRow!.row]
+                }
+            default:
+                break
+            }
+        }
     }
-    */
+    
 
 }

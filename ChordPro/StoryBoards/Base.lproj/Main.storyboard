@@ -362,7 +362,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jZR-ml-ax5" userLabel="Chord Stack View">
-                                <rect key="frame" x="10" y="98" width="394" height="80"/>
+                                <rect key="frame" x="10" y="54" width="394" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chord_C" translatesAutoresizingMaskIntoConstraints="NO" id="dar-36-gjj">
                                         <rect key="frame" x="0.0" y="0.0" width="66.5" height="80"/>
@@ -403,7 +403,7 @@
                                 </connections>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plX-L3-aG2" userLabel="Chord Player View">
-                                <rect key="frame" x="10" y="738" width="394" height="60"/>
+                                <rect key="frame" x="10" y="787" width="394" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="39A-kY-dsy">
                                         <rect key="frame" x="2" y="2" width="390" height="56"/>
@@ -477,7 +477,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-RQ-Ziu">
-                                <rect key="frame" x="10" y="180" width="394" height="548"/>
+                                <rect key="frame" x="10" y="136" width="394" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <prototypes>
@@ -575,7 +575,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k1a-nB-XDU" userLabel="Title Stack View">
-                                <rect key="frame" x="91.5" y="118" width="231" height="95.5"/>
+                                <rect key="frame" x="91.5" y="74" width="231" height="95.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oe-eY-TG6">
                                         <rect key="frame" x="0.0" y="0.0" width="231" height="48"/>
@@ -592,7 +592,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WZP-LY-r9Y" userLabel="Strum Notation Stack View">
-                                <rect key="frame" x="104" y="223.5" width="206" height="92"/>
+                                <rect key="frame" x="104" y="179.5" width="206" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strumming notations:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY4-rk-YfB">
                                         <rect key="frame" x="33.5" y="0.0" width="139" height="17"/>
@@ -628,7 +628,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kHS-6b-QOB" userLabel="Progression Image Stack View">
-                                <rect key="frame" x="55" y="670.5" width="304" height="112.5"/>
+                                <rect key="frame" x="55" y="719.5" width="304" height="112.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WHm-8Q-6j9">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="112.5"/>
@@ -714,7 +714,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NJr-2l-8ll" userLabel="Progression Text Stack View">
-                                <rect key="frame" x="129" y="611.5" width="156.5" height="49"/>
+                                <rect key="frame" x="129" y="660.5" width="156.5" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'s chord progression" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJf-Nu-dqg">
                                         <rect key="frame" x="0.0" y="0.0" width="156.5" height="20.5"/>
@@ -1029,55 +1029,205 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Chord Library" id="2Tz-13-0q4"/>
                     <connections>
-                        <segue destination="x5U-Gl-BL3" kind="show" identifier="chordPopoverSegue" id="hO0-Yj-ixb"/>
+                        <segue destination="QDA-f1-phg" kind="show" identifier="chordDetailSegue" id="3JZ-7Z-fyX"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLK-P0-nES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1913" y="869"/>
         </scene>
-        <!--Chord Popover View Controller-->
-        <scene sceneID="Afl-Iq-PkQ">
+        <!--Chord Detail Table View Controller-->
+        <scene sceneID="6AT-Tw-xUa">
             <objects>
-                <viewController id="x5U-Gl-BL3" customClass="ChordPopoverViewController" customModule="ChordPro" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="o7s-hr-P0E">
+                <tableViewController id="QDA-f1-phg" customClass="ChordDetailTableViewController" customModule="ChordPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sRd-g1-aQX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1np-PY-xL9">
-                                <rect key="frame" x="87" y="314" width="240" height="268.5"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WwB-IT-Eaw">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="WwB-IT-Eaw" secondAttribute="height" multiplier="1:1" id="8Mg-9T-b17"/>
-                                            <constraint firstAttribute="width" constant="240" id="u20-lY-nJj"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOc-P3-0q2">
-                                        <rect key="frame" x="99" y="248" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="1np-PY-xL9" firstAttribute="centerX" secondItem="o7s-hr-P0E" secondAttribute="centerX" id="2pc-kH-2Se"/>
-                            <constraint firstItem="1np-PY-xL9" firstAttribute="centerY" secondItem="o7s-hr-P0E" secondAttribute="centerY" id="d3b-te-zmf"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="m4i-ka-AWY"/>
-                    </view>
+                        <sections>
+                            <tableViewSection headerTitle="" id="XpV-sa-bYx">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="Fs2-Wk-Lau">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fs2-Wk-Lau" id="U8t-xs-no3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="249.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SYt-d2-Za9" userLabel="Chord Stack View">
+                                                    <rect key="frame" x="5" y="5" width="404" height="239.5"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9f-On-qcs">
+                                                            <rect key="frame" x="0.0" y="5" width="191.5" height="229.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="d9f-On-qcs" secondAttribute="height" multiplier="5:6" id="RDv-wK-zV4"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ges-Os-Ygy">
+                                                            <rect key="frame" x="199.5" y="84" width="204.5" height="72"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="d9f-On-qcs" secondAttribute="bottom" constant="5" id="vo6-Ne-BEQ"/>
+                                                        <constraint firstItem="d9f-On-qcs" firstAttribute="top" secondItem="SYt-d2-Za9" secondAttribute="top" constant="5" id="xuH-JO-f8F"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SYt-d2-Za9" firstAttribute="top" secondItem="U8t-xs-no3" secondAttribute="top" constant="5" id="9AX-5k-8Ti"/>
+                                                <constraint firstAttribute="trailing" secondItem="SYt-d2-Za9" secondAttribute="trailing" constant="5" id="ZXO-ky-gEP"/>
+                                                <constraint firstAttribute="bottom" secondItem="SYt-d2-Za9" secondAttribute="bottom" constant="5" id="sEu-ZU-Tao"/>
+                                                <constraint firstItem="SYt-d2-Za9" firstAttribute="leading" secondItem="U8t-xs-no3" secondAttribute="leading" constant="5" id="sSi-y0-vXu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="K6q-dc-KiP">
+                                        <rect key="frame" x="0.0" y="250" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K6q-dc-KiP" id="JtD-Ub-66P">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="w5j-fb-ELW" userLabel="Key Stack View">
+                                                    <rect key="frame" x="5" y="5" width="404" height="139.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Chord Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpX-XL-Eqk">
+                                                            <rect key="frame" x="0.0" y="0.0" width="404" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Key Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tem-Or-CGd">
+                                                            <rect key="frame" x="0.0" y="20.5" width="404" height="119"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="w5j-fb-ELW" secondAttribute="trailing" constant="5" id="AFS-Wy-zXw"/>
+                                                <constraint firstAttribute="bottom" secondItem="w5j-fb-ELW" secondAttribute="bottom" constant="5" id="Av1-AR-cQr"/>
+                                                <constraint firstItem="w5j-fb-ELW" firstAttribute="leading" secondItem="JtD-Ub-66P" secondAttribute="leading" constant="5" id="MJA-GB-hLV"/>
+                                                <constraint firstItem="w5j-fb-ELW" firstAttribute="top" secondItem="JtD-Ub-66P" secondAttribute="top" constant="5" id="oZ9-qi-tYD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="vJG-qc-uZo">
+                                        <rect key="frame" x="0.0" y="400" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vJG-qc-uZo" id="zCn-cx-Sce">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="249.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="B8i-hu-MmX" userLabel="Type Stack View">
+                                                    <rect key="frame" x="5" y="5" width="404" height="49"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Chord Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdr-bj-dSe">
+                                                            <rect key="frame" x="0.0" y="0.0" width="95" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Chord Type Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLM-lM-0EH">
+                                                            <rect key="frame" x="0.0" y="28.5" width="181" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="B8i-hu-MmX" firstAttribute="leading" secondItem="zCn-cx-Sce" secondAttribute="leading" constant="5" id="3Bm-Lj-oFr"/>
+                                                <constraint firstItem="B8i-hu-MmX" firstAttribute="top" secondItem="zCn-cx-Sce" secondAttribute="top" constant="5" id="Nge-xq-2f6"/>
+                                                <constraint firstAttribute="trailing" secondItem="B8i-hu-MmX" secondAttribute="trailing" constant="5" id="uwr-Lk-D2p"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="1250" id="Lbf-hs-wt4">
+                                        <rect key="frame" x="0.0" y="650" width="414" height="1250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lbf-hs-wt4" id="lbc-Ym-Y3P">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1249.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9OE-F4-Kgh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1249.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More examples" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q1-O6-B0f">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic chords of :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7S-pN-FRm">
+                                                            <rect key="frame" x="0.0" y="43" width="414" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qh7-QB-KMv">
+                                                            <rect key="frame" x="0.0" y="63.5" width="414" height="263.5"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic chords of :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MF9-f8-VY2">
+                                                            <rect key="frame" x="0.0" y="327" width="414" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D1w-TE-nuB">
+                                                            <rect key="frame" x="0.0" y="347.5" width="414" height="902"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="D1w-TE-nuB" secondAttribute="height" multiplier="420:915" priority="250" id="9if-cx-nQO"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="qh7-QB-KMv" secondAttribute="trailing" id="FSd-JT-WSF"/>
+                                                        <constraint firstItem="qh7-QB-KMv" firstAttribute="width" secondItem="qh7-QB-KMv" secondAttribute="height" multiplier="11:7" id="MpS-ei-zrk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="D1w-TE-nuB" secondAttribute="trailing" id="fJ4-q8-QPs"/>
+                                                        <constraint firstItem="D1w-TE-nuB" firstAttribute="leading" secondItem="9OE-F4-Kgh" secondAttribute="leading" id="maa-jq-OMa"/>
+                                                        <constraint firstItem="qh7-QB-KMv" firstAttribute="leading" secondItem="9OE-F4-Kgh" secondAttribute="leading" id="nCL-Fj-2BR"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="9OE-F4-Kgh" secondAttribute="bottom" priority="750" id="6XY-P6-jMH"/>
+                                                <constraint firstItem="9OE-F4-Kgh" firstAttribute="top" secondItem="lbc-Ym-Y3P" secondAttribute="top" id="7jt-aT-H7u"/>
+                                                <constraint firstItem="9OE-F4-Kgh" firstAttribute="leading" secondItem="lbc-Ym-Y3P" secondAttribute="leading" id="RJ0-fc-QeJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="9OE-F4-Kgh" secondAttribute="trailing" id="q9n-WK-Ful"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="QDA-f1-phg" id="ZS2-5f-5N4"/>
+                            <outlet property="delegate" destination="QDA-f1-phg" id="zAR-Ml-xHr"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="chordImageView" destination="WwB-IT-Eaw" id="qcT-IY-307"/>
-                        <outlet property="chordNameLabel" destination="JOc-P3-0q2" id="zH4-zW-xR4"/>
+                        <outlet property="basicChordKeyLabel" destination="MF9-f8-VY2" id="vC8-CK-BPz"/>
+                        <outlet property="basicTypeChordLabel" destination="c7S-pN-FRm" id="bHa-nW-V9d"/>
+                        <outlet property="chordImageView" destination="d9f-On-qcs" id="rBt-YU-GI8"/>
+                        <outlet property="chordKeyDescriptionLabel" destination="tem-Or-CGd" id="P8c-Xc-MWV"/>
+                        <outlet property="chordKeyImageView" destination="D1w-TE-nuB" id="X2I-q8-WMn"/>
+                        <outlet property="chordKeyLabel" destination="jpX-XL-Eqk" id="Xng-XB-YcQ"/>
+                        <outlet property="chordNameLabel" destination="ges-Os-Ygy" id="Hhk-hq-4fl"/>
+                        <outlet property="chordTypeDescriptionLabel" destination="NLM-lM-0EH" id="98G-wK-XwZ"/>
+                        <outlet property="chordTypeImageView" destination="qh7-QB-KMv" id="9cd-Is-b0Y"/>
+                        <outlet property="chordTypeLabel" destination="gdr-bj-dSe" id="A9e-9u-NMv"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j2N-mv-h6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVE-zY-ejb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2867" y="869"/>
+            <point key="canvasLocation" x="2823" y="869"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="E1T-bs-DRp">
@@ -1222,6 +1372,7 @@
                                     <outletCollection property="chordImageViewCollection" destination="pQe-07-8Rc" collectionClass="NSMutableArray" id="9k0-kS-DMp"/>
                                     <outletCollection property="chordImageViewCollection" destination="T2y-PT-B7H" collectionClass="NSMutableArray" id="qAy-7Z-HXx"/>
                                     <outletCollection property="chordImageViewCollection" destination="dIx-cs-DbT" collectionClass="NSMutableArray" id="xht-kT-nDa"/>
+                                    <segue destination="6uW-Z1-mIv" kind="show" identifier="progressionDetalSegue" id="cKU-Nh-rLV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1235,6 +1386,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4L-iN-BWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1011.5942028985507" y="1650.6696428571429"/>
+        </scene>
+        <!--Progression Detail Table View Controller-->
+        <scene sceneID="MIe-Uc-1TM">
+            <objects>
+                <tableViewController id="6uW-Z1-mIv" customClass="ProgressionDetailTableViewController" customModule="ChordPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gvi-ir-Qx1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="progressionDetailCell" rowHeight="100" id="sDf-sr-BFG" customClass="ProgressionDetailTableViewCell" customModule="ChordPro" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sDf-sr-BFG" id="bA8-lO-ZeE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="riH-oz-m8t">
+                                            <rect key="frame" x="10" y="0.0" width="145" height="99.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qxh-ea-4k2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="99.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Qxh-ea-4k2" secondAttribute="height" multiplier="5:6" id="PyC-tb-iPc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfL-Af-Mzk">
+                                                    <rect key="frame" x="103" y="39.5" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Qxh-ea-4k2" firstAttribute="top" secondItem="riH-oz-m8t" secondAttribute="top" id="r20-sM-JV3"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="riH-oz-m8t" firstAttribute="top" secondItem="bA8-lO-ZeE" secondAttribute="top" id="L5o-5m-Ndu"/>
+                                        <constraint firstAttribute="bottom" secondItem="riH-oz-m8t" secondAttribute="bottom" id="QLO-kk-NML"/>
+                                        <constraint firstItem="riH-oz-m8t" firstAttribute="leading" secondItem="bA8-lO-ZeE" secondAttribute="leading" constant="10" id="f79-kA-UK3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="chordImageView" destination="Qxh-ea-4k2" id="eyB-eO-SkZ"/>
+                                    <outlet property="chordLabel" destination="bfL-Af-Mzk" id="Oz2-nf-LRm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="6uW-Z1-mIv" id="Nl3-rD-gcd"/>
+                            <outlet property="delegate" destination="6uW-Z1-mIv" id="Iyw-fk-Qr2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBo-Rg-ydv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1979.7101449275365" y="1650.6696428571429"/>
         </scene>
         <!--Chord-->
         <scene sceneID="k04-Fe-pkA">
@@ -1304,6 +1515,6 @@
         <image name="video" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GZC-CK-wrM"/>
+        <segue reference="LXK-nb-sTJ"/>
     </inferredMetricsTieBreakers>
 </document>

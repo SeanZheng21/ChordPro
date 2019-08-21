@@ -36,12 +36,12 @@ class ChordViewController: UIViewController {
         var songChords = progression.split(separator: " ")
         if songChords.count >= 4 {
             for i in 0..<4 {
-                chordProgressionCollectionImageView[i].image = UIImage(named: String(songChords[i]))
+                chordProgressionCollectionImageView[i].image = UIImage(named: "chord_" + String(songChords[i]))
                 chordProgressionCollectionLabel[i].text = String(songChords[i])
             }
         } else {
             for i in 0..<songChords.count {
-                chordProgressionCollectionImageView[i].image = UIImage(named: String(songChords[i]))
+                chordProgressionCollectionImageView[i].image = UIImage(named: "chord_" + String(songChords[i]))
             }
         }
 

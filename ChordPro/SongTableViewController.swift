@@ -18,6 +18,7 @@ class SongTableViewController: UITableViewController {
         super.viewDidLoad()
         songs.append(Song("Perfect", "Divide", "Ed Sheeran", "G Em C D", 1, .easy, "m4a", videoURL: "https://www.youtube.com/watch?v=8NODy7CMzb0"))
         songs.append(Song("All Too Well", "Red", "Taylor Swift", "C G Am F", like: true, videoURL: "https://www.youtube.com/watch?v=9d0CdE9KVrI"))
+        songs.append(Song("Legends", "Unapologetically", "Kelsea Ballerini", "C Dm Am F", 4, .medium, "m4a", like: false, videoURL: "https://www.youtube.com/watch?v=60K-JbbLfc0"))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

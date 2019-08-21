@@ -33,12 +33,8 @@ class ChordLibraryCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
         if let identifier = segue.identifier {
             switch identifier {
-            case "chordPopoverSegue":
-                if let vc = segue.destination as? ChordPopoverViewController {
-//                    if let ppc = vc.popoverPresentationController {
-//                        ppc.permittedArrowDirections = .any
-////                        ppc.delegate = self
-//                    }
+            case "chordDetailSegue":
+                if let vc = segue.destination as? ChordDetailTableViewController {
                     if let chordCell = sender as? ChordLibraryCollectionViewCell {
                         vc.chord = Chord(chordCell.nameLabel.text ?? "")
                     }
@@ -97,7 +93,7 @@ class ChordLibraryCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "chordPopoverSegue", sender: collectionView.cellForItem(at: indexPath))
+        self.performSegue(withIdentifier: "chordDetailSegue", sender: collectionView.cellForItem(at: indexPath))
     }
 
     /*
