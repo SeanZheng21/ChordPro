@@ -18,7 +18,11 @@ class ChordDetailTableViewController: UITableViewController {
     @IBOutlet weak var chordNameLabel: UILabel!
     
     @IBOutlet weak var chordKeyLabel: UILabel!
-    @IBOutlet weak var chordKeyDescriptionLabel: UILabel!
+    @IBOutlet weak var majorKeyDescriptionLabel: UILabel!
+    @IBOutlet weak var majorKeyImageView: UIImageView!
+    @IBOutlet weak var minorKeyDescriptionLabel: UILabel!
+    @IBOutlet weak var minorKeyImageView: UIImageView!
+    
     @IBOutlet weak var basicChordKeyLabel: UILabel!
     @IBOutlet weak var chordKeyImageView: UIImageView!
     
@@ -45,6 +49,10 @@ class ChordDetailTableViewController: UITableViewController {
         chordKeyLabel.text = "Key: " + chord.key
         basicChordKeyLabel.text = "Basic chords of \(chord.key) key:"
         chordKeyImageView.image = UIImage(named: "key_" + chord.key)
+        majorKeyDescriptionLabel.text = "Natural major scale: \( Chord.getMajorScale(of: chord.key) ?? "")"
+        minorKeyDescriptionLabel.text = "Natural minor scale: \( Chord.getMinorScale(of: chord.key) ?? "")"
+        majorKeyImageView.image = UIImage(named: "scale_" + chord.key)
+        minorKeyImageView.image = UIImage(named: "scale_" + chord.key + "m")
         basicTypeChordLabel.text = "Basic \(chord.type.typeName().localizedLowercase) chords:"
         chordTypeImageView.image = UIImage(named: "type_" + chord.type.rawValue)
     }

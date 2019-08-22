@@ -1084,15 +1084,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="K6q-dc-KiP">
-                                        <rect key="frame" x="0.0" y="250" width="414" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="400" id="K6q-dc-KiP">
+                                        <rect key="frame" x="0.0" y="250" width="414" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K6q-dc-KiP" id="JtD-Ub-66P">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="399.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="w5j-fb-ELW" userLabel="Key Stack View">
-                                                    <rect key="frame" x="5" y="5" width="404" height="139.5"/>
+                                                    <rect key="frame" x="5" y="5" width="404" height="331"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Chord Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpX-XL-Eqk">
                                                             <rect key="frame" x="0.0" y="0.0" width="404" height="20.5"/>
@@ -1101,24 +1101,44 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Key Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tem-Or-CGd">
-                                                            <rect key="frame" x="0.0" y="20.5" width="404" height="119"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="404" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cK0-HN-cKF">
+                                                            <rect key="frame" x="0.0" y="41" width="404" height="134.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="cK0-HN-cKF" secondAttribute="height" multiplier="3:1" id="rn3-4O-xZH"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Key Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cr5-t5-YP6">
+                                                            <rect key="frame" x="0.0" y="175.5" width="404" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gad-sV-EPJ">
+                                                            <rect key="frame" x="0.0" y="196" width="404" height="135"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="gad-sV-EPJ" secondAttribute="height" multiplier="3:1" id="I9C-42-oia"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="gad-sV-EPJ" firstAttribute="width" secondItem="gad-sV-EPJ" secondAttribute="height" multiplier="3:1" id="09B-Be-uC5"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="w5j-fb-ELW" secondAttribute="trailing" constant="5" id="AFS-Wy-zXw"/>
-                                                <constraint firstAttribute="bottom" secondItem="w5j-fb-ELW" secondAttribute="bottom" constant="5" id="Av1-AR-cQr"/>
                                                 <constraint firstItem="w5j-fb-ELW" firstAttribute="leading" secondItem="JtD-Ub-66P" secondAttribute="leading" constant="5" id="MJA-GB-hLV"/>
                                                 <constraint firstItem="w5j-fb-ELW" firstAttribute="top" secondItem="JtD-Ub-66P" secondAttribute="top" constant="5" id="oZ9-qi-tYD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="vJG-qc-uZo">
-                                        <rect key="frame" x="0.0" y="400" width="414" height="250"/>
+                                        <rect key="frame" x="0.0" y="650" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vJG-qc-uZo" id="zCn-cx-Sce">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="249.5"/>
@@ -1150,7 +1170,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="1250" id="Lbf-hs-wt4">
-                                        <rect key="frame" x="0.0" y="650" width="414" height="1250"/>
+                                        <rect key="frame" x="0.0" y="900" width="414" height="1250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lbf-hs-wt4" id="lbc-Ym-Y3P">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="1249.5"/>
@@ -1216,13 +1236,16 @@
                         <outlet property="basicChordKeyLabel" destination="MF9-f8-VY2" id="vC8-CK-BPz"/>
                         <outlet property="basicTypeChordLabel" destination="c7S-pN-FRm" id="bHa-nW-V9d"/>
                         <outlet property="chordImageView" destination="d9f-On-qcs" id="rBt-YU-GI8"/>
-                        <outlet property="chordKeyDescriptionLabel" destination="tem-Or-CGd" id="P8c-Xc-MWV"/>
                         <outlet property="chordKeyImageView" destination="D1w-TE-nuB" id="X2I-q8-WMn"/>
                         <outlet property="chordKeyLabel" destination="jpX-XL-Eqk" id="Xng-XB-YcQ"/>
                         <outlet property="chordNameLabel" destination="ges-Os-Ygy" id="Hhk-hq-4fl"/>
                         <outlet property="chordTypeDescriptionLabel" destination="NLM-lM-0EH" id="98G-wK-XwZ"/>
                         <outlet property="chordTypeImageView" destination="qh7-QB-KMv" id="9cd-Is-b0Y"/>
                         <outlet property="chordTypeLabel" destination="gdr-bj-dSe" id="A9e-9u-NMv"/>
+                        <outlet property="majorKeyDescriptionLabel" destination="tem-Or-CGd" id="abf-tV-40S"/>
+                        <outlet property="majorKeyImageView" destination="cK0-HN-cKF" id="G8a-sa-WCp"/>
+                        <outlet property="minorKeyDescriptionLabel" destination="Cr5-t5-YP6" id="fOR-dI-hJ5"/>
+                        <outlet property="minorKeyImageView" destination="gad-sV-EPJ" id="64q-Sy-ENN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVE-zY-ejb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1264,11 +1287,11 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progression" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCG-IY-oVF">
                                             <rect key="frame" x="295.5" y="54.5" width="98.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iJD-MB-RVd">
-                                            <rect key="frame" x="0.0" y="0.0" width="290.5" height="129.5"/>
+                                            <rect key="frame" x="10" y="0.0" width="290.5" height="129.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2gW-6I-2Ih">
                                                     <rect key="frame" x="0.0" y="10.5" width="66.5" height="108.5"/>
@@ -1344,24 +1367,16 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="H04-rX-leE">
-                                            <rect key="frame" x="20" y="11" width="291" height="108"/>
-                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="iJD-MB-RVd" secondAttribute="bottom" id="8lH-6u-mCR"/>
                                         <constraint firstItem="FCG-IY-oVF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iJD-MB-RVd" secondAttribute="trailing" priority="250" constant="5" id="L2X-J4-FW5"/>
                                         <constraint firstItem="FCG-IY-oVF" firstAttribute="centerY" secondItem="1P8-gX-QEJ" secondAttribute="centerY" id="OHA-TA-01E"/>
                                         <constraint firstItem="FCG-IY-oVF" firstAttribute="trailing" secondItem="1P8-gX-QEJ" secondAttribute="trailingMargin" id="TXX-Rv-rpu"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="H04-rX-leE" secondAttribute="trailing" constant="83" id="UBD-V1-4Lq"/>
-                                        <constraint firstItem="H04-rX-leE" firstAttribute="leading" secondItem="1P8-gX-QEJ" secondAttribute="leadingMargin" id="Vaz-3P-9oY"/>
-                                        <constraint firstItem="iJD-MB-RVd" firstAttribute="leading" secondItem="1P8-gX-QEJ" secondAttribute="leading" id="ZhL-Mo-nR8"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="H04-rX-leE" secondAttribute="bottom" id="elQ-Vj-ygh"/>
-                                        <constraint firstItem="H04-rX-leE" firstAttribute="top" secondItem="1P8-gX-QEJ" secondAttribute="topMargin" id="hLX-CR-5Wo"/>
+                                        <constraint firstItem="iJD-MB-RVd" firstAttribute="leading" secondItem="1P8-gX-QEJ" secondAttribute="leading" constant="10" id="ZhL-Mo-nR8"/>
                                         <constraint firstItem="iJD-MB-RVd" firstAttribute="top" secondItem="1P8-gX-QEJ" secondAttribute="top" id="y2L-9d-s8G"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="FCG-IY-oVF" id="QhO-FE-fmY"/>
                                     <outletCollection property="chordLabelCollection" destination="bYq-8M-5ki" collectionClass="NSMutableArray" id="AZX-JK-jUG"/>
@@ -1403,8 +1418,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="riH-oz-m8t">
-                                            <rect key="frame" x="10" y="0.0" width="145" height="99.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="riH-oz-m8t">
+                                            <rect key="frame" x="10" y="0.0" width="394" height="99.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qxh-ea-4k2">
                                                     <rect key="frame" x="0.0" y="0.0" width="83" height="99.5"/>
@@ -1412,12 +1427,38 @@
                                                         <constraint firstAttribute="width" secondItem="Qxh-ea-4k2" secondAttribute="height" multiplier="5:6" id="PyC-tb-iPc"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfL-Af-Mzk">
-                                                    <rect key="frame" x="103" y="39.5" width="42" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cx-f3-kcc">
+                                                    <rect key="frame" x="91" y="0.0" width="100" height="99.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="2j9-8u-vOJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FnW-8X-RRt">
+                                                    <rect key="frame" x="199" y="0.0" width="195" height="99.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="First chord " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YE-Ga-u3j">
+                                                            <rect key="frame" x="0.0" y="0.0" width="195" height="33"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord key" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6c-xV-IGX">
+                                                            <rect key="frame" x="0.0" y="33" width="195" height="33.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord type" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHn-r9-Cg9">
+                                                            <rect key="frame" x="0.0" y="66.5" width="195" height="33"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Qxh-ea-4k2" firstAttribute="top" secondItem="riH-oz-m8t" secondAttribute="top" id="r20-sM-JV3"/>
@@ -1425,6 +1466,7 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="riH-oz-m8t" secondAttribute="trailing" constant="10" id="DoL-3k-dUh"/>
                                         <constraint firstItem="riH-oz-m8t" firstAttribute="top" secondItem="bA8-lO-ZeE" secondAttribute="top" id="L5o-5m-Ndu"/>
                                         <constraint firstAttribute="bottom" secondItem="riH-oz-m8t" secondAttribute="bottom" id="QLO-kk-NML"/>
                                         <constraint firstItem="riH-oz-m8t" firstAttribute="leading" secondItem="bA8-lO-ZeE" secondAttribute="leading" constant="10" id="f79-kA-UK3"/>
@@ -1432,7 +1474,10 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="chordImageView" destination="Qxh-ea-4k2" id="eyB-eO-SkZ"/>
-                                    <outlet property="chordLabel" destination="bfL-Af-Mzk" id="Oz2-nf-LRm"/>
+                                    <outlet property="chordKeyLabel" destination="c6c-xV-IGX" id="LXL-7M-Hwh"/>
+                                    <outlet property="chordLabel" destination="9cx-f3-kcc" id="lVG-pK-YR3"/>
+                                    <outlet property="chordNumberLabel" destination="6YE-Ga-u3j" id="mjp-mJ-Tu6"/>
+                                    <outlet property="chordTypeLabel" destination="VHn-r9-Cg9" id="8ql-nf-Hju"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1442,6 +1487,9 @@
                             <outlet property="delegate" destination="6uW-Z1-mIv" id="Iyw-fk-Qr2"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="QDA-f1-phg" kind="show" identifier="chordDetailSegue" id="NnP-hh-Fa3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBo-Rg-ydv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1515,6 +1563,7 @@
         <image name="video" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="NnP-hh-Fa3"/>
         <segue reference="LXK-nb-sTJ"/>
     </inferredMetricsTieBreakers>
 </document>

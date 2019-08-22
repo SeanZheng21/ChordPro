@@ -45,6 +45,23 @@ class Chord {
         }
     }
     
+    private static let scales: [String: String] = [
+        "C": "C, D, E, F, G, A, B, C",
+        "D": "D, E, F#, G, A, B, C#, D",
+        "E": "E, F#, G#, A, B, C#, D#, E",
+        "F": "F, G, A, Bb, C, D, E, F",
+        "G": "G, A, B, C, D, E, F#, G",
+        "A": "A, B, C#, D, E, F#, G#, A",
+        "B": "B, C#, D#, E, F#, G#, A#, B",
+        "Cm": "C, D, Eb, F, G, Ab, Bb, C",
+        "Dm": "D, E, F, G, A, Bb, C, D",
+        "Em": "E, F#, G, A, B, C, D, E",
+        "Fm": "F, G, Ab, Bb, C, Db, Eb, F",
+        "Gm": "G, A, Bb, C, D, Eb, F, G",
+        "Am": "A, B, C, D, E, F, G, A",
+        "Bm": "B, C#, D, E, F#, G, A, B"
+    ]
+    
     var name: String {
         didSet {
             self.key = String(name.prefix(1))
@@ -87,5 +104,13 @@ class Chord {
             return .Unknown
         }
         
+    }
+    
+    static func getMajorScale(of key: String) -> String? {
+        return Chord.scales[key]
+    }
+    
+    static func getMinorScale(of key: String) -> String? {
+        return Chord.scales[key + "m"]
     }
 }

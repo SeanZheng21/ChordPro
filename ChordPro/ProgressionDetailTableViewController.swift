@@ -10,11 +10,13 @@ import UIKit
 
 class ProgressionDetailTableViewController: UITableViewController {
     
+    let formatter = NumberFormatter()
     var progression = Progression("")
+    var chords = [Chord]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        formatter.numberStyle = .ordinal
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -40,9 +42,15 @@ class ProgressionDetailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "progressionDetailCell", for: indexPath) as! ProgressionDetailTableViewCell
 
         // Configure the cell...
-        
-        cell.chordLabel.text = progression.chords[indexPath.row]
+        let chord = Chord(progression.chords[indexPath.row])
+        self.chords.append(chord)
+        cell.chordLabel.text = chord.name
         cell.imageView?.image = UIImage(named: "chord_" + progression.chords[indexPath.row])
+        
+        cell.chordNumberLabel.text = (formatter.string(from: NSNumber(integerLiteral: indexPath.row + 1)) ?? "") + " chord"
+        cell.chordKeyLabel.text = "Key: " + chord.key
+        cell.chordTypeLabel.text = "Type: " + chord.type.typeName()
+        
         return cell
     }
     
@@ -50,13 +58,16 @@ class ProgressionDetailTableViewController: UITableViewController {
         return CGFloat(100.0)
     }
     
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "chordDetailSegue", sender: self)
+    }
 
     /*
     // Override to support editing the table view.
@@ -85,14 +96,24 @@ class ProgressionDetailTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "chordDetailSegue":
+                if let chordDetailVC = segue.destination as? ChordDetailTableViewController {
+                    chordDetailVC.chord = chords[tableView.indexPathForSelectedRow?.row ?? 0]
+                }
+            default:
+                break
+            }
+        }
     }
-    */
+    
 
 }
