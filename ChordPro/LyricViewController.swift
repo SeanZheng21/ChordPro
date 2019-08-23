@@ -15,6 +15,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     var song: Song = Song("All Too Well", "Red", "Taylor Swift", "C G Am F")
     var timer: Timer = Timer()
     var audioPlayer = AVAudioPlayer()
+    var validURL = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             if let path = Bundle.main.path(forResource: song.name, ofType: song.format) {
                 let songURL = URL.init(fileURLWithPath: path)
                 audioPlayer = try AVAudioPlayer(contentsOf: songURL)
+                validURL = true
                 audioPlayer.prepareToPlay()
                 song.duration = audioPlayer.duration
                 //            audioPlayer.currentTime = LyricViewController.START_TIME
@@ -50,9 +52,13 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        playPauseButton.setImage(UIImage(named: "play"), for: .normal)
-        audioPlayer.pause()
-        timer.invalidate()
+        if !validURL {
+            return
+        } else {
+            playPauseButton.setImage(UIImage(named: "play"), for: .normal)
+            audioPlayer.pause()
+            timer.invalidate()
+        }
     }
 
     @IBOutlet weak var chordLabel: UILabel!
@@ -154,7 +160,12 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         var wordString = ""
         let chordString = NSMutableAttributedString(string: "")
         if song.lyric[indexPath.row].isStrumming {
-            wordString = song.lyric[indexPath.row].text
+            wordString = song.lyric[indexPath.row].text.replacingOccurrences(of: "DU", with: "⇵")
+                .replacingOccurrences(of: "DF", with: "⬇")
+                .replacingOccurrences(of: "UF", with: "⬆")
+                .replacingOccurrences(of: "UD", with: "⇅")
+                .replacingOccurrences(of: "D", with: "↓")
+                .replacingOccurrences(of: "U", with: "↑")
         } else {
             for (_, word, chord) in song.lyric[indexPath.row].words {
                 wordString.append(contentsOf: word + " ")

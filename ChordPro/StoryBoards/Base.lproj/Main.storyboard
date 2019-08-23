@@ -327,6 +327,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Song" id="RHp-JA-Drp">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="stS-iC-4lw">
+                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="ywb-Aq-eZN" kind="unwind" unwindAction="unwindToSongTableView:" id="K5v-uJ-WvA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="m2g-C3-JKa">
                             <connections>
                                 <segue destination="amU-86-jMq" kind="show" identifier="unwindAddSong" id="LXK-nb-sTJ"/>
@@ -350,6 +356,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obh-8S-2sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ywb-Aq-eZN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3788" y="-747"/>
         </scene>

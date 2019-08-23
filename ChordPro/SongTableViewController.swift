@@ -173,18 +173,17 @@ class SongTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToSongTableView(_ sender: UIStoryboardSegue) {
-        switch sender.identifier {
-        case "unwindAddSong":
-            if let addSongTableViewController = sender.source as? AddSongTableViewController {
-                let songToAdd = addSongTableViewController.song
-                self.songs.append(songToAdd)
-                self.tableView.reloadData()
-            }
-        default:
-            // Do nothing
-            let _ = true
-        }
-        
+//        switch sender.identifier {
+//        case "unwindAddSong":
+//            if let addSongTableViewController = sender.source as? AddSongTableViewController {
+//                let songToAdd = addSongTableViewController.song
+//                self.songs.append(songToAdd)
+//                self.tableView.reloadData()
+//            }
+//        default:
+//            break
+//        }
+        dismiss(animated: true, completion: nil)
     }
-
+    
 }
