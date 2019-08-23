@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import UserNotifications
 
 class SongTableViewController: UITableViewController {
     
@@ -24,6 +25,7 @@ class SongTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        prepareNotification()
     }
 
     // MARK: - Table view data source
@@ -173,17 +175,56 @@ class SongTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToSongTableView(_ sender: UIStoryboardSegue) {
-//        switch sender.identifier {
-//        case "unwindAddSong":
-//            if let addSongTableViewController = sender.source as? AddSongTableViewController {
-//                let songToAdd = addSongTableViewController.song
-//                self.songs.append(songToAdd)
-//                self.tableView.reloadData()
-//            }
-//        default:
-//            break
-//        }
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - User Notifications
+    
+    func prepareNotification() {
+        // Make sure the restaurant array is not empty
+        if songs.count <= 0 {
+            return
+        }
+        
+        // Pick a song randomly
+        let randomNum = Int(arc4random_uniform(UInt32(songs.count)))
+        let suggestedSong = songs[randomNum]
+        
+        // Create the user notification
+        let content = UNMutableNotificationContent()
+        content.title = "Song Recommendation"
+        content.subtitle = "Try new song today"
+        content.body = "I recommend you to check out \(suggestedSong.name). Its difficulty level is \(suggestedSong.difficulty.rawValue). Pick up your guitar and play it now!"
+        content.sound = UNNotificationSound.default
+        
+        // Preparing the image
+        let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+        let tempFileURL = tempDirURL.appendingPathComponent("legends.jpg")
+
+        if let image = suggestedSong.artwork {
+
+            try? image.jpegData(compressionQuality: 1.0)?.write(to: tempFileURL)
+            if let restaurantImage = try? UNNotificationAttachment(identifier: "restaurantImage", url: tempFileURL, options: nil) {
+                content.attachments = [restaurantImage]
+            }
+        }
+        
+//        // Set up interaction
+//        let categoryIdentifer = "foodpin.restaurantaction"
+//        let makeReservationAction = UNNotificationAction(identifier: "foodpin.makeReservation", title: "Reserve a table", options: [.foreground])
+//        let cancelAction = UNNotificationAction(identifier: "foodpin.cancel", title: "Later", options: [])
+//        let category = UNNotificationCategory(identifier: categoryIdentifer, actions: [makeReservationAction, cancelAction], intentIdentifiers: [], options: [])
+//        UNUserNotificationCenter.current().setNotificationCategories([category])
+//        content.categoryIdentifier = categoryIdentifer
+        
+        // Show the notification in 2 minutes to 10 minutes
+        let triggerTimeInterval = 120 + 60 * Int(arc4random_uniform(UInt32(8)))
+//        triggerTimeInterval = 10     // for test
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(triggerTimeInterval), repeats: false)
+        let request = UNNotificationRequest(identifier: "chordpro.songSuggestion", content: content, trigger: trigger)
+        
+        // Schedule the notification
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+    }
 }
