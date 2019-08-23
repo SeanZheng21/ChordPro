@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SafariServices
 
 class LyricViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -19,6 +20,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +51,12 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         navigationItem.title = song.name
         artworkImageView.image = song.artwork
+        songNameArtistLabel.text = song.name + " - " + song.artist
+        difficultyLabel.text = "Level: " + song.difficulty.rawValue
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .ordinal
+        capoLabel.text = "Capo: \(formatter.string(from: NSNumber(integerLiteral: song.capo)) ?? "0") fr."
+        progressionLabel.text = song.progression
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -59,6 +67,10 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             audioPlayer.pause()
             timer.invalidate()
         }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        self.chordPlayerView.layer.cornerRadius = 10
     }
 
     @IBOutlet weak var chordLabel: UILabel!
@@ -71,10 +83,23 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             artworkImageView.layer.cornerRadius = 5
         }
     }
+    @IBOutlet weak var songNameArtistLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet var restartButton: [UIButton]!
+    @IBOutlet weak var difficultyLabel: UILabel!
+    @IBOutlet weak var capoLabel: UILabel!
+    @IBOutlet weak var progressionLabel: UILabel!
+    @IBOutlet weak var videoButton: UIButton!
+    @IBOutlet weak var chordPlayerView: UIView!
+    
+    @IBAction func startVideo(_ sender: UIButton) {
+        if let url = URL(string: song.videoURL ?? "") {
+            let safariController = SFSafariViewController(url: url)
+            present(safariController, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func playPause(_ sender: UIButton) {
         if !audioPlayer.isPlaying {

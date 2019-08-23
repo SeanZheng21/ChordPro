@@ -369,7 +369,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jZR-ml-ax5" userLabel="Chord Stack View">
-                                <rect key="frame" x="10" y="98" width="394" height="80"/>
+                                <rect key="frame" x="10" y="54" width="394" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chord_C" translatesAutoresizingMaskIntoConstraints="NO" id="dar-36-gjj">
                                         <rect key="frame" x="0.0" y="0.0" width="66.5" height="80"/>
@@ -410,81 +410,125 @@
                                 </connections>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plX-L3-aG2" userLabel="Chord Player View">
-                                <rect key="frame" x="10" y="787" width="394" height="60"/>
+                                <rect key="frame" x="10" y="767" width="394" height="80"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="39A-kY-dsy">
-                                        <rect key="frame" x="2" y="2" width="390" height="56"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nb9-bj-aSi">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="80"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYd-Dz-Evc">
-                                                <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="EYd-Dz-Evc" secondAttribute="height" multiplier="1:1" id="o6V-6u-ZJ0"/>
-                                                </constraints>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-Z2-9Hz" userLabel="Porgress Stack View">
-                                                <rect key="frame" x="64" y="9" width="225" height="38.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="39A-kY-dsy">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="60"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipN-7m-4II">
-                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="8.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DR7-QF-qem">
-                                                        <rect key="frame" x="0.0" y="16.5" width="225" height="2"/>
-                                                        <color key="progressTintColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </progressView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 / 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwa-rq-ueY">
-                                                        <rect key="frame" x="0.0" y="26.5" width="225" height="12"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYd-Dz-Evc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="EYd-Dz-Evc" secondAttribute="height" multiplier="1:1" id="o6V-6u-ZJ0"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-Z2-9Hz" userLabel="Porgress Stack View">
+                                                        <rect key="frame" x="68" y="9" width="246.5" height="42"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Song Name - Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipN-7m-4II">
+                                                                <rect key="frame" x="0.0" y="0.0" width="246.5" height="12"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <color key="textColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DR7-QF-qem">
+                                                                <rect key="frame" x="0.0" y="20" width="246.5" height="2"/>
+                                                                <color key="progressTintColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </progressView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 / 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwa-rq-ueY">
+                                                                <rect key="frame" x="0.0" y="30" width="246.5" height="12"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aLM-hK-KNy" userLabel="Player Stack View">
+                                                        <rect key="frame" x="322.5" y="15" width="71.5" height="30"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccS-Jy-YQB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="ccS-Jy-YQB" secondAttribute="height" multiplier="273:256" id="AMJ-xy-BhL"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="u6n-7U-vue"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Play/Pause" image="play"/>
+                                                                <connections>
+                                                                    <action selector="playPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eac-Fi-aY8"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETs-1U-EO9">
+                                                                <rect key="frame" x="40" y="0.0" width="31.5" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="ETs-1U-EO9" secondAttribute="height" multiplier="1083:1024" id="SWm-Di-Zli"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="vXf-6S-wgt"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Restart" image="restart">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEW-zj-hpc"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SrB-ny-ed0">
+                                                <rect key="frame" x="0.0" y="60" width="394" height="20"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssF-MQ-myh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aLM-hK-KNy" userLabel="Player Stack View">
-                                                <rect key="frame" x="297" y="8" width="93" height="40"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccS-Jy-YQB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="42.5" height="40"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRf-BQ-0zA">
+                                                        <rect key="frame" x="98" y="0.0" width="54" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progression" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHn-qJ-DFJ">
+                                                        <rect key="frame" x="160" y="0.0" width="206" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9m-39-loB">
+                                                        <rect key="frame" x="374" y="0.0" width="20" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="ccS-Jy-YQB" secondAttribute="height" multiplier="273:256" id="AMJ-xy-BhL"/>
-                                                            <constraint firstAttribute="height" constant="40" id="u6n-7U-vue"/>
+                                                            <constraint firstAttribute="width" secondItem="V9m-39-loB" secondAttribute="height" multiplier="1:1" id="WqS-0J-s8f"/>
                                                         </constraints>
-                                                        <state key="normal" title="Play/Pause" image="play"/>
+                                                        <state key="normal" title="Video" image="video"/>
                                                         <connections>
-                                                            <action selector="playPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eac-Fi-aY8"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETs-1U-EO9">
-                                                        <rect key="frame" x="50.5" y="0.0" width="42.5" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="ETs-1U-EO9" secondAttribute="height" multiplier="1083:1024" id="SWm-Di-Zli"/>
-                                                            <constraint firstAttribute="height" constant="40" id="vXf-6S-wgt"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Restart" image="restart">
-                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEW-zj-hpc"/>
+                                                            <action selector="startVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8qG-Pt-i0M"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="wpa-aF-KyM"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="SrB-ny-ed0" secondAttribute="bottom" id="PU4-y8-Tno"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.85490196080000003" green="0.86274509799999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="39A-kY-dsy" secondAttribute="bottom" constant="2" id="75R-2n-AoY"/>
-                                    <constraint firstAttribute="trailing" secondItem="39A-kY-dsy" secondAttribute="trailing" constant="2" id="Fcj-rR-4mS"/>
-                                    <constraint firstAttribute="height" constant="60" id="VxQ-2F-VjG"/>
-                                    <constraint firstItem="39A-kY-dsy" firstAttribute="top" secondItem="plX-L3-aG2" secondAttribute="top" constant="2" id="d4S-8v-XqJ"/>
-                                    <constraint firstItem="39A-kY-dsy" firstAttribute="leading" secondItem="plX-L3-aG2" secondAttribute="leading" constant="2" id="uLe-I9-OpU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nb9-bj-aSi" secondAttribute="bottom" id="54d-g2-CDG"/>
+                                    <constraint firstItem="Nb9-bj-aSi" firstAttribute="leading" secondItem="plX-L3-aG2" secondAttribute="leading" id="9DU-1v-xMp"/>
+                                    <constraint firstAttribute="height" constant="80" id="VxQ-2F-VjG"/>
+                                    <constraint firstItem="Nb9-bj-aSi" firstAttribute="top" secondItem="plX-L3-aG2" secondAttribute="top" id="X0t-Yb-1OQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nb9-bj-aSi" secondAttribute="trailing" id="ukw-zu-3Lm"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-RQ-Ziu">
-                                <rect key="frame" x="10" y="180" width="394" height="597"/>
+                                <rect key="frame" x="10" y="136" width="394" height="621"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <prototypes>
@@ -548,13 +592,19 @@
                     <navigationItem key="navigationItem" id="Mre-Dc-Xur"/>
                     <connections>
                         <outlet property="artworkImageView" destination="EYd-Dz-Evc" id="8nO-Su-sT5"/>
+                        <outlet property="capoLabel" destination="lRf-BQ-0zA" id="dxt-vQ-OeQ"/>
                         <outlet property="chordImage" destination="dar-36-gjj" id="S4X-EP-wsx"/>
                         <outlet property="chordLabel" destination="b48-l6-UFK" id="IjT-eX-EC1"/>
+                        <outlet property="chordPlayerView" destination="plX-L3-aG2" id="OLW-Fk-nXT"/>
+                        <outlet property="difficultyLabel" destination="ssF-MQ-myh" id="DKb-Xa-nHK"/>
                         <outlet property="playPauseButton" destination="ccS-Jy-YQB" id="1We-gg-7G4"/>
                         <outlet property="progressBar" destination="DR7-QF-qem" id="bC3-Kd-OGW"/>
                         <outlet property="progressLabel" destination="Iwa-rq-ueY" id="dSZ-Em-eGl"/>
+                        <outlet property="progressionLabel" destination="UHn-qJ-DFJ" id="2eZ-H9-GkQ"/>
+                        <outlet property="songNameArtistLabel" destination="ipN-7m-4II" id="9SX-Aq-yrX"/>
                         <outlet property="strummingLabel" destination="I71-8G-z1g" id="sXe-1g-UOp"/>
                         <outlet property="tableView" destination="eBk-RQ-Ziu" id="v3P-3c-KU5"/>
+                        <outlet property="videoButton" destination="V9m-39-loB" id="Rv7-ZJ-53p"/>
                         <outletCollection property="restartButton" destination="ETs-1U-EO9" collectionClass="NSMutableArray" id="NRR-Cu-N5m"/>
                         <segue destination="iy5-8a-he3" kind="show" identifier="chordSegue" id="Zvy-Mm-wLx"/>
                     </connections>
@@ -571,7 +621,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2871.1999999999998" y="27.436281859070466"/>
+            <point key="canvasLocation" x="2871.0144927536235" y="26.785714285714285"/>
         </scene>
         <!--Chord View Controller-->
         <scene sceneID="aha-mY-tyj">
@@ -582,7 +632,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k1a-nB-XDU" userLabel="Title Stack View">
-                                <rect key="frame" x="91.5" y="118" width="231" height="95.5"/>
+                                <rect key="frame" x="91.5" y="74" width="231" height="95.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oe-eY-TG6">
                                         <rect key="frame" x="0.0" y="0.0" width="231" height="48"/>
@@ -599,7 +649,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WZP-LY-r9Y" userLabel="Strum Notation Stack View">
-                                <rect key="frame" x="104" y="223.5" width="206" height="92"/>
+                                <rect key="frame" x="104" y="179.5" width="206" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strumming notations:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY4-rk-YfB">
                                         <rect key="frame" x="33.5" y="0.0" width="139" height="17"/>
@@ -1281,7 +1331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6v-0Q-R7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759" y="842"/>
+            <point key="canvasLocation" x="-2358" y="828"/>
         </scene>
         <!--Chord Progression-->
         <scene sceneID="6vq-CS-A2z">
@@ -1617,8 +1667,7 @@
         <image name="video" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZqF-Oh-lbN"/>
-        <segue reference="NnP-hh-Fa3"/>
+        <segue reference="3JZ-7Z-fyX"/>
         <segue reference="LXK-nb-sTJ"/>
     </inferredMetricsTieBreakers>
 </document>
