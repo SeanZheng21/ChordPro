@@ -25,6 +25,10 @@ class ProgressionDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var chordImageView: UIImageView!
     @IBOutlet weak var chordNumberLabel: UILabel!
     
+    @IBOutlet weak var patternLabel: UILabel!
+    @IBOutlet weak var patternNoteLabel: UILabel!
+    
+    
     @IBOutlet weak var chordKeyLabel: UILabel!
     @IBOutlet weak var chordTypeLabel: UILabel!
 }

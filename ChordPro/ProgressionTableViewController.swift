@@ -105,6 +105,7 @@ class ProgressionTableViewController: UITableViewController {
             case "progressionDetalSegue":
                 if let progressionDetailVC = segue.destination as? ProgressionDetailTableViewController {
                     progressionDetailVC.progression = self.progressions[tableView.indexPathForSelectedRow!.section][tableView.indexPathForSelectedRow!.row]
+                    progressionDetailVC.pattern = ProgressionFactory.getMode(for: tableView.indexPathForSelectedRow!.section)
                 }
             default:
                 break

@@ -12,6 +12,7 @@ class ProgressionDetailTableViewController: UITableViewController {
     
     let formatter = NumberFormatter()
     var progression = Progression("")
+    var pattern = ""
     var chords = [Chord]()
 
     override func viewDidLoad() {
@@ -51,6 +52,8 @@ class ProgressionDetailTableViewController: UITableViewController {
         cell.chordKeyLabel.text = "Key: " + chord.key
         cell.chordTypeLabel.text = "Type: " + chord.type.typeName()
         
+        cell.patternLabel.text = "Pattern\n" + self.pattern
+        cell.patternNoteLabel.text = "Note: " + String(self.pattern.split(separator: " ")[indexPath.row])
         return cell
     }
     
