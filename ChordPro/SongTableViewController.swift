@@ -14,17 +14,22 @@ class SongTableViewController: UITableViewController {
     
     static let CELL_HEIGHT = 160
     var songs: [Song] = []
+    var suggestedSongs: [Song] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         songs.append(Song("Perfect", "Divide", "Ed Sheeran", "G Em C D", 1, .easy, "m4a", videoURL: "https://www.youtube.com/watch?v=8NODy7CMzb0"))
         songs.append(Song("All Too Well", "Red", "Taylor Swift", "C G Am F", like: true, videoURL: "https://www.youtube.com/watch?v=9d0CdE9KVrI"))
-        songs.append(Song("Legends", "Unapologetically", "Kelsea Ballerini", "C Dm Am F", 4, .medium, "m4a", like: false, videoURL: "https://www.youtube.com/watch?v=60K-JbbLfc0"))
+        songs.append(Song("Legends", "Unapologetically", "Kelsea Ballerini", "C Dm Am F", 4, .hard, "m4a", like: false, videoURL: "https://www.youtube.com/watch?v=60K-JbbLfc0"))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        UserDefaults.standard.set(Song.Difficulity.medium.rawValue, forKey: "UserLevel")
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let myLevel = Song.Difficulity.getLevel(from: UserDefaults.standard.string(forKey: "UserLevel") ?? "") {
+            suggestedSongs = getSuggestedSongs(from: songs, with: myLevel)
+        }
         prepareNotification()
     }
 
@@ -32,12 +37,16 @@ class SongTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return songs.count
+        if section == 0 {
+            return songs.count
+        } else {
+            return suggestedSongs.count
+        }
     }
 
     
@@ -143,6 +152,20 @@ class SongTableViewController: UITableViewController {
         return true
     }
     */
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return (section == 0) ? "My Songs" : " Suggested For Me"
+    }
+    
+    func getSuggestedSongs(from songs: [Song], with userLevel: Song.Difficulity) -> [Song] {
+        var resSongs = [Song]()
+        for song in songs {
+            if song.difficulty.compare(to: userLevel){
+                resSongs.append(song)
+            }
+        }
+        return resSongs
+    }
 
     // MARK: - Navigation
 

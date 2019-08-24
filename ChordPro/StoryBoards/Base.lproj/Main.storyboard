@@ -369,7 +369,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jZR-ml-ax5" userLabel="Chord Stack View">
-                                <rect key="frame" x="10" y="54" width="394" height="80"/>
+                                <rect key="frame" x="10" y="98" width="394" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chord_C" translatesAutoresizingMaskIntoConstraints="NO" id="dar-36-gjj">
                                         <rect key="frame" x="0.0" y="0.0" width="66.5" height="80"/>
@@ -528,7 +528,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBk-RQ-Ziu">
-                                <rect key="frame" x="10" y="136" width="394" height="621"/>
+                                <rect key="frame" x="10" y="180" width="394" height="577"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <prototypes>
@@ -632,7 +632,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k1a-nB-XDU" userLabel="Title Stack View">
-                                <rect key="frame" x="91.5" y="74" width="231" height="95.5"/>
+                                <rect key="frame" x="91.5" y="118" width="231" height="95.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oe-eY-TG6">
                                         <rect key="frame" x="0.0" y="0.0" width="231" height="48"/>
@@ -649,7 +649,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WZP-LY-r9Y" userLabel="Strum Notation Stack View">
-                                <rect key="frame" x="104" y="179.5" width="206" height="92"/>
+                                <rect key="frame" x="104" y="223.5" width="206" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strumming notations:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY4-rk-YfB">
                                         <rect key="frame" x="33.5" y="0.0" width="139" height="17"/>
@@ -1026,17 +1026,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nkE-ti-i4H">
-                            <size key="itemSize" width="70" height="100"/>
+                            <size key="itemSize" width="68" height="100"/>
                             <size key="headerReferenceSize" width="50" height="30"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="chordLibraryCell" id="czW-dY-ahh" customClass="ChordLibraryCollectionViewCell" customModule="ChordPro" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="30" width="70" height="100"/>
+                                <rect key="frame" x="0.0" y="30" width="68" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="70" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="68" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WVx-uh-xfF">
@@ -1059,7 +1059,7 @@
                                         </stackView>
                                     </subviews>
                                 </view>
-                                <size key="customSize" width="70" height="100"/>
+                                <size key="customSize" width="68" height="100"/>
                                 <connections>
                                     <outlet property="chordImage" destination="tKK-RK-oDX" id="CaL-lW-4w4"/>
                                     <outlet property="nameLabel" destination="Yec-ZT-NrH" id="0bO-eh-F1T"/>
@@ -1099,7 +1099,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLK-P0-nES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="869"/>
+            <point key="canvasLocation" x="1911.594202898551" y="868.52678571428567"/>
         </scene>
         <!--Chord Detail Table View Controller-->
         <scene sceneID="6AT-Tw-xUa">
@@ -1667,6 +1667,7 @@
         <image name="video" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="8Ms-sc-o0H"/>
         <segue reference="3JZ-7Z-fyX"/>
         <segue reference="LXK-nb-sTJ"/>
     </inferredMetricsTieBreakers>

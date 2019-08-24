@@ -13,6 +13,28 @@ class Song {
         case easy = "easy"
         case medium = "medium"
         case hard = "hard"
+        
+        func compare(to myLevel: Difficulity) -> Bool {
+            if myLevel == .easy {
+                return self == .easy
+            } else if myLevel == .medium {
+                return self != .hard
+            } else {
+                return true
+            }
+        }
+        
+        static func getLevel(from str: String) -> Difficulity? {
+            if str.localizedLowercase == "easy" {
+                return .easy
+            } else if str.localizedLowercase == "medium" {
+                return .medium
+            } else if str.localizedLowercase == "hard" {
+                return .hard
+            } else {
+                return nil
+            }
+        }
     }
     
     let name: String
