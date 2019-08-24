@@ -44,6 +44,8 @@ class Song {
     var duration: Double?
     var progression: String?
     var capo: Int
+    var startChord: String
+    var startStrumming: String
     var difficulty: Difficulity
     var format: String
     var like: Bool
@@ -51,13 +53,15 @@ class Song {
     
     var lyric: [Line]
     
-    init(_ name: String, _ album: String, _ artist: String, _ progression: String, _ capo: Int = 0, _ difficulty: Difficulity = .medium, _ format: String = "mp3", like: Bool = false, videoURL: String = "") {
+    init(_ name: String, _ album: String, _ artist: String, _ progression: String, startChord: String = "", startStrumming: String = "", _ capo: Int = 0, _ difficulty: Difficulity = .medium, _ format: String = "mp3", like: Bool = false, videoURL: String = "") {
         self.name = name
         self.album = album
         self.artist = artist
         self.duration = 0
         self.artwork = UIImage(named: name)
         self.lyric = SongFactory.getLyric(of: name)
+        self.startChord = startChord
+        self.startStrumming = startStrumming
         self.capo = capo
         self.progression = progression
         self.difficulty = difficulty

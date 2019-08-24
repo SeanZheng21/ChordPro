@@ -52,9 +52,12 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         navigationItem.title = song.name
         artworkImageView.image = song.artwork
         songNameArtistLabel.text = song.name + " - " + song.artist
-        difficultyLabel.text = "Level: " + song.difficulty.rawValue
+        difficultyLabel.text = " Level: " + song.difficulty.rawValue
         let formatter = NumberFormatter()
         formatter.numberStyle = .ordinal
+        chordLabel.text = song.startChord
+        chordImage.image = UIImage(named: "chord_" + song.startChord)
+        strummingLabel.text = song.startStrumming
         capoLabel.text = "Capo: \(formatter.string(from: NSNumber(integerLiteral: song.capo)) ?? "0") fr."
         progressionLabel.text = song.progression
     }
