@@ -13,6 +13,7 @@ import SafariServices
 class LyricViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     static let START_TIME: Double = 270.0
+    var timePlayed = 0
     var song: Song = Song("All Too Well", "Red", "Taylor Swift", "C G Am F")
     var timer: Timer = Timer()
     var audioPlayer = AVAudioPlayer()
@@ -57,9 +58,10 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         formatter.numberStyle = .ordinal
         chordLabel.text = song.startChord
         chordImage.image = UIImage(named: "chord_" + song.startChord)
-        strummingLabel.text = song.startStrumming
+        strummingLabel.text = formatStrumming(song.startStrumming)
         capoLabel.text = "Capo: \(formatter.string(from: NSNumber(integerLiteral: song.capo)) ?? "0") fr."
         progressionLabel.text = song.progression
+        timePlayed = Int(Date().timeIntervalSince1970)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,6 +71,17 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             playPauseButton.setImage(UIImage(named: "play"), for: .normal)
             audioPlayer.pause()
             timer.invalidate()
+            timePlayed = Int(Date().timeIntervalSince1970) - timePlayed
+            if timePlayed > 36000 {
+                timePlayed = 10
+            }
+            if let _ = UserDefaults.standard.object(forKey: "timePlayed") {
+                let totalTime = timePlayed + UserDefaults.standard.integer(forKey: "timePlayed")
+                UserDefaults.standard.set(totalTime, forKey: "timePlayed")
+            } else {
+                UserDefaults.standard.set(timePlayed, forKey: "timePlayed")
+            }
+            print("Time played: \(UserDefaults.standard.integer(forKey: "timePlayed"))")
         }
     }
     
@@ -139,12 +152,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         var isStrumming = false
         if let lT = lyricText, lT.starts(with: "Strumming:") {
             let plainText = String(lT.dropFirst(10))
-            strummingLabel.text = plainText.replacingOccurrences(of: "DU", with: "⇵")
-                .replacingOccurrences(of: "DF", with: "⬇")
-                .replacingOccurrences(of: "UF", with: "⬆")
-                .replacingOccurrences(of: "UD", with: "⇅")
-                .replacingOccurrences(of: "D", with: "↓")
-                .replacingOccurrences(of: "U", with: "↑")
+            strummingLabel.text = formatStrumming(plainText)
             self.strummingLabel.textColor = (self.strummingLabel.textColor == #colorLiteral(red: 1, green: 0.2527923882, blue: 1, alpha: 1) ? #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1) : #colorLiteral(red: 1, green: 0.2527923882, blue: 1, alpha: 1))
             isStrumming = true
         }
@@ -188,12 +196,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         var wordString = ""
         let chordString = NSMutableAttributedString(string: "")
         if song.lyric[indexPath.row].isStrumming {
-            wordString = song.lyric[indexPath.row].text.replacingOccurrences(of: "DU", with: "⇵")
-                .replacingOccurrences(of: "DF", with: "⬇")
-                .replacingOccurrences(of: "UF", with: "⬆")
-                .replacingOccurrences(of: "UD", with: "⇅")
-                .replacingOccurrences(of: "D", with: "↓")
-                .replacingOccurrences(of: "U", with: "↑")
+            wordString = formatStrumming(song.lyric[indexPath.row].text)
         } else {
             for (_, word, chord) in song.lyric[indexPath.row].words {
                 wordString.append(contentsOf: word + " ")
@@ -258,6 +261,14 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
      }
     
+    func formatStrumming(_ strumming: String) -> String {
+        return strumming.replacingOccurrences(of: "DU", with: "⇵")
+            .replacingOccurrences(of: "DF", with: "⬇")
+            .replacingOccurrences(of: "UF", with: "⬆")
+            .replacingOccurrences(of: "UD", with: "⇅")
+            .replacingOccurrences(of: "D", with: "↓")
+            .replacingOccurrences(of: "U", with: "↑")
+    }
 }
 
 extension Int {

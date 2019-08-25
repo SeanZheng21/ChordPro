@@ -25,12 +25,19 @@ class SongTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        UserDefaults.standard.set(Song.Difficulity.medium.rawValue, forKey: "UserLevel")
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         if let myLevel = Song.Difficulity.getLevel(from: UserDefaults.standard.string(forKey: "UserLevel") ?? "") {
             suggestedSongs = getSuggestedSongs(from: songs, with: myLevel)
         }
-        prepareNotification()
+        if UserDefaults.standard.bool(forKey: "notification") {
+            prepareNotification()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let myLevel = Song.Difficulity.getLevel(from: UserDefaults.standard.string(forKey: "UserLevel") ?? "") {
+            suggestedSongs = getSuggestedSongs(from: songs, with: myLevel)
+        }
     }
 
     // MARK: - Table view data source
@@ -205,10 +212,10 @@ class SongTableViewController: UITableViewController {
     
     func prepareNotification() {
         // Make sure the restaurant array is not empty
-        if songs.count <= 0 {
+        // And notification is allowed by user in the app
+        if songs.count <= 0 || !UserDefaults.standard.bool(forKey: "notification"){
             return
         }
-        
         // Pick a song randomly
         let randomNum = Int(arc4random_uniform(UInt32(songs.count)))
         let suggestedSong = songs[randomNum]
