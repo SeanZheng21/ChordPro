@@ -35,6 +35,8 @@
 		FFB890DC22F592EF002337EA /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB890DB22F592EF002337EA /* Chord.swift */; };
 		FFB890DE22F59322002337EA /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB890DD22F59322002337EA /* Line.swift */; };
 		FFC8965223052B160013CF9D /* AddSongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC8965123052B160013CF9D /* AddSongTableViewController.swift */; };
+		FFCCB4A423227CAB00316CDE /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCCB4A323227CAB00316CDE /* Onboarding.storyboard */; };
+		FFCCB4A623227F0000316CDE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCCB4A523227F0000316CDE /* OnboardingViewController.swift */; };
 		FFE3634D23113AF4008E42F1 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE3634C23113AF4008E42F1 /* MoreTableViewController.swift */; };
 		FFEE8C632312ADDB00744865 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE8C622312ADDB00744865 /* LevelViewController.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		FFB890DB22F592EF002337EA /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
 		FFB890DD22F59322002337EA /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		FFC8965123052B160013CF9D /* AddSongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSongTableViewController.swift; sourceTree = "<group>"; };
+		FFCCB4A323227CAB00316CDE /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		FFCCB4A523227F0000316CDE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FFE3634C23113AF4008E42F1 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		FFEE8C622312ADDB00744865 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				FF76C08222F57E4A005254F5 /* Main.storyboard */,
+				FFCCB4A323227CAB00316CDE /* Onboarding.storyboard */,
 				FF76C08722F57E4B005254F5 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				FFE3634C23113AF4008E42F1 /* MoreTableViewController.swift */,
+				FFCCB4A523227F0000316CDE /* OnboardingViewController.swift */,
 				FFEE8C622312ADDB00744865 /* LevelViewController.swift */,
 				FF49160B2307ED88007A9C3F /* ProgressionDetailTableViewController.swift */,
 				FF49160D2307EF5E007A9C3F /* ProgressionDetailTableViewCell.swift */,
@@ -230,6 +236,7 @@
 				FF76C09222F585D8005254F5 /* All Too Well.mp3 in Resources */,
 				FF7A238422F992E900012CE2 /* Perfect.m4a in Resources */,
 				FF5C7D582306F49400FD5802 /* Legends.m4a in Resources */,
+				FFCCB4A423227CAB00316CDE /* Onboarding.storyboard in Resources */,
 				FF76C08422F57E4A005254F5 /* Main.storyboard in Resources */,
 				FF4DD60822FECDD6004EF87C /* Assets.xcassets in Resources */,
 			);
@@ -254,6 +261,7 @@
 				FF3B210E230D6283006C4E6C /* ChordDetailTableViewController.swift in Sources */,
 				FFC8965223052B160013CF9D /* AddSongTableViewController.swift in Sources */,
 				FF79216D23000634006C78B3 /* ChordCollectionReusableView.swift in Sources */,
+				FFCCB4A623227F0000316CDE /* OnboardingViewController.swift in Sources */,
 				FF79216922FFE839006C78B3 /* ChordLibraryCollectionViewController.swift in Sources */,
 				FF1DB01E2306B2DD00481765 /* Progression.swift in Sources */,
 				FFE3634D23113AF4008E42F1 /* MoreTableViewController.swift in Sources */,

@@ -1489,11 +1489,20 @@
                         <outlet property="notificationSwitch" destination="2Wp-6S-I42" id="Zxo-ly-Hs5"/>
                         <outlet property="timePlayedLabel" destination="OuI-Jr-zrt" id="c9x-bl-vvP"/>
                         <segue destination="890-aL-WKL" kind="show" identifier="myLevelSegue" id="Ol6-AM-sOd"/>
+                        <segue destination="SQd-Ap-Kqa" kind="show" identifier="walkthroughSegue" id="Vhp-GB-BRg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obW-Ux-U4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1294" y="1030"/>
+        </scene>
+        <!--Onboarding-->
+        <scene sceneID="q0d-E1-FTg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Onboarding" id="SQd-Ap-Kqa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v0x-uF-Cjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-576" y="950"/>
         </scene>
         <!--Level View Controller-->
         <scene sceneID="0VP-bm-OJV">
@@ -1549,7 +1558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTf-ID-xhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-472" y="1029"/>
+            <point key="canvasLocation" x="-141" y="1030"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yhn-3B-BPl">

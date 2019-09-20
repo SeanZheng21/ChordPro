@@ -30,11 +30,24 @@ class MoreTableViewController: UITableViewController {
         self.notificationSwitch.isOn = UserDefaults.standard.bool(forKey: "notification")
         self.autoplaySwitch.isOn = UserDefaults.standard.bool(forKey: "autoplay")
         self.setTimePlayed()
-        self.levelLabel.text = UserDefaults.standard.string(forKey: "UserLevel")
+        self.levelLabel.text = getLevelDescription(for: UserDefaults.standard.string(forKey: "UserLevel") ?? "")
+    }
+    
+    func getLevelDescription(for key: String) -> String {
+        switch key {
+        case "easy":
+            return "beginner"
+        case "medium":
+            return "intermediate"
+        case "hard":
+            return "expert"
+        default:
+            return "not set"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.levelLabel.text = UserDefaults.standard.string(forKey: "UserLevel")
+        self.levelLabel.text = getLevelDescription(for: UserDefaults.standard.string(forKey: "UserLevel") ?? "")
     }
 
     @IBOutlet weak var levelLabel: UILabel!
@@ -98,7 +111,7 @@ class MoreTableViewController: UITableViewController {
                     present(safariController, animated: true, completion: nil)
                 }
             case 4:
-                performSegue(withIdentifier: "showWalkthrough", sender: self)
+                performSegue(withIdentifier: "walkthroughSegue", sender: self)
             default:
                 break
             }
