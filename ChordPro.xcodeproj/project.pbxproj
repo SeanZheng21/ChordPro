@@ -201,6 +201,7 @@
 				TargetAttributes = {
 					FF76C07A22F57E4A005254F5 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1120;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -429,7 +430,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CarlistleZ.ChordPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -448,7 +449,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.CarlistleZ.ChordPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

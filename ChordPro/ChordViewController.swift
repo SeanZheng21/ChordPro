@@ -33,7 +33,7 @@ class ChordViewController: UIViewController {
     @IBOutlet var chordProgressionCollectionLabel: [UILabel]!
     
     func setChordProgressionImages(to progression: String) {
-        var songChords = progression.split(separator: " ")
+        let songChords = progression.split(separator: " ")
         if songChords.count >= 4 {
             for i in 0..<4 {
                 chordProgressionCollectionImageView[i].image = UIImage(named: "chord_" + String(songChords[i]))

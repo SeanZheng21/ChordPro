@@ -233,7 +233,7 @@ class SongTableViewController: UITableViewController {
 
         if let image = suggestedSong.artwork {
 
-            try? image.jpegData(compressionQuality: 1.0)?.write(to: tempFileURL)
+            ((try? image.jpegData(compressionQuality: 1.0)?.write(to: tempFileURL)) as ()??)
             if let restaurantImage = try? UNNotificationAttachment(identifier: "restaurantImage", url: tempFileURL, options: nil) {
                 content.attachments = [restaurantImage]
             }

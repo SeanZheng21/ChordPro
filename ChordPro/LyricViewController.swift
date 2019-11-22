@@ -16,7 +16,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
     var timePlayed = 0
     var song: Song = Song("All Too Well", "Red", "Taylor Swift", "C G Am F")
     var timer: Timer = Timer()
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     var validURL = false
     
     override func viewDidLoad() {
@@ -165,7 +165,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         let current = audioPlayer.currentTime, duration = audioPlayer.duration
         progressBar.progress = Float(current / duration)
-        progressLabel.text = Int(current).formatTime() + " / " + Int(duration).formatTime()
+        progressLabel.text = Int(current).formatToTimeString() + " / " + Int(duration).formatToTimeString()
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -272,7 +272,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
 }
 
 extension Int {
-    func formatTime() -> String {
+    func formatToTimeString() -> String {
         // Formats the integer to format: mm:SS
         var minute = "00"
         var second = "00"

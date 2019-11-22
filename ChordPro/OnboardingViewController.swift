@@ -37,9 +37,12 @@ class OnboardingViewController: UIViewController {
         imageView.image = UIImage(named: "onboarding\(currentPage)")
         if currentPage >= TOTAL_PAGE - 1 {
             nextButton.isHidden = true
+            skipButton.titleLabel?.text = "End"
         } else if currentPage == 0 {
+            skipButton.titleLabel?.text = "Skip"
             previousButton.isHidden = true
         } else {
+            skipButton.titleLabel?.text = "Skip"
             nextButton.isHidden = false
             previousButton.isHidden = false
         }
