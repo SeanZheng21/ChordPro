@@ -12,7 +12,8 @@ class SongFactory {
         var lineStrings: [String] = []
         if let filepath = Bundle.main.path(forResource: songName, ofType: "txt") {
             do {
-                let contents = try String(contentsOfFile: filepath)
+                let songURL = URL.init(fileURLWithPath: filepath)
+                let contents = try String(contentsOf: songURL)
                 let lines = contents.split { $0.isNewline }
                 for line in lines {
                     lineStrings.append(String(line))

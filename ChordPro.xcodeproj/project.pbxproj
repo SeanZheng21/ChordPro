@@ -12,6 +12,9 @@
 		FF1DB01E2306B2DD00481765 /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DB01D2306B2DD00481765 /* Progression.swift */; };
 		FF306A1422F845D9005FADA9 /* ChordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF306A1322F845D9005FADA9 /* ChordViewController.swift */; };
 		FF3B210E230D6283006C4E6C /* ChordDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B210D230D6283006C4E6C /* ChordDetailTableViewController.swift */; };
+		FF3F4A1D2387FD6700914B25 /* All Too Well.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF3F4A1A2387FD6700914B25 /* All Too Well.txt */; };
+		FF3F4A1E2387FD6700914B25 /* Legends.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF3F4A1B2387FD6700914B25 /* Legends.txt */; };
+		FF3F4A1F2387FD6700914B25 /* Perfect.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF3F4A1C2387FD6700914B25 /* Perfect.txt */; };
 		FF49160C2307ED88007A9C3F /* ProgressionDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49160B2307ED88007A9C3F /* ProgressionDetailTableViewController.swift */; };
 		FF49160E2307EF5E007A9C3F /* ProgressionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49160D2307EF5E007A9C3F /* ProgressionDetailTableViewCell.swift */; };
 		FF49807822F6C5450032F04E /* LyricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF49807722F6C5450032F04E /* LyricTableViewCell.swift */; };
@@ -31,9 +34,6 @@
 		FF7A238422F992E900012CE2 /* Perfect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FF7A238322F992E900012CE2 /* Perfect.m4a */; };
 		FF7A238622F9938600012CE2 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A238522F9938600012CE2 /* SongTableViewController.swift */; };
 		FF7A238822F9941700012CE2 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7A238722F9941700012CE2 /* SongTableViewCell.swift */; };
-		FFB4126B2387C73A00F14A62 /* All Too Well.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFB4126A2387C73A00F14A62 /* All Too Well.txt */; };
-		FFB6E0B92387EA3E004356B5 /* Perfect.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFB6E0B82387EA3E004356B5 /* Perfect.txt */; };
-		FFB6E0BB2387EA71004356B5 /* Legends.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFB6E0BA2387EA71004356B5 /* Legends.txt */; };
 		FFB890DA22F592DE002337EA /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB890D922F592DE002337EA /* Song.swift */; };
 		FFB890DC22F592EF002337EA /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB890DB22F592EF002337EA /* Chord.swift */; };
 		FFB890DE22F59322002337EA /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB890DD22F59322002337EA /* Line.swift */; };
@@ -50,6 +50,9 @@
 		FF1DB01D2306B2DD00481765 /* Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progression.swift; sourceTree = "<group>"; };
 		FF306A1322F845D9005FADA9 /* ChordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordViewController.swift; sourceTree = "<group>"; };
 		FF3B210D230D6283006C4E6C /* ChordDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordDetailTableViewController.swift; sourceTree = "<group>"; };
+		FF3F4A1A2387FD6700914B25 /* All Too Well.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "All Too Well.txt"; sourceTree = "<group>"; };
+		FF3F4A1B2387FD6700914B25 /* Legends.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Legends.txt; sourceTree = "<group>"; };
+		FF3F4A1C2387FD6700914B25 /* Perfect.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Perfect.txt; sourceTree = "<group>"; };
 		FF49160B2307ED88007A9C3F /* ProgressionDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDetailTableViewController.swift; sourceTree = "<group>"; };
 		FF49160D2307EF5E007A9C3F /* ProgressionDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionDetailTableViewCell.swift; sourceTree = "<group>"; };
 		FF49807722F6C5450032F04E /* LyricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LyricTableViewCell.swift; path = ChordPro/LyricTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -71,9 +74,6 @@
 		FF7A238322F992E900012CE2 /* Perfect.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Perfect.m4a; sourceTree = "<group>"; };
 		FF7A238522F9938600012CE2 /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SongTableViewController.swift; path = ChordPro/SongTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		FF7A238722F9941700012CE2 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
-		FFB4126A2387C73A00F14A62 /* All Too Well.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "All Too Well.txt"; sourceTree = "<group>"; };
-		FFB6E0B82387EA3E004356B5 /* Perfect.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Perfect.txt; sourceTree = "<group>"; };
-		FFB6E0BA2387EA71004356B5 /* Legends.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Legends.txt; sourceTree = "<group>"; };
 		FFB890D922F592DE002337EA /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		FFB890DB22F592EF002337EA /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
 		FFB890DD22F59322002337EA /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -109,6 +109,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FF3F4A192387FD2600914B25 /* Lyrics */ = {
+			isa = PBXGroup;
+			children = (
+				FF3F4A1A2387FD6700914B25 /* All Too Well.txt */,
+				FF3F4A1B2387FD6700914B25 /* Legends.txt */,
+				FF3F4A1C2387FD6700914B25 /* Perfect.txt */,
+			);
+			path = Lyrics;
+			sourceTree = "<group>";
+		};
 		FF49807422F6B1DE0032F04E /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,10 +132,6 @@
 		FF76C07222F57E4A005254F5 = {
 			isa = PBXGroup;
 			children = (
-				FFB6E0B82387EA3E004356B5 /* Perfect.txt */,
-				FFB6E0BA2387EA71004356B5 /* Legends.txt */,
-				FFB4126A2387C73A00F14A62 /* All Too Well.txt */,
-				FFB412692387C70A00F14A62 /* Lyrics */,
 				FF76C07D22F57E4A005254F5 /* ChordPro */,
 				FF76C07C22F57E4A005254F5 /* Products */,
 			);
@@ -162,6 +168,7 @@
 				FF76C07E22F57E4A005254F5 /* AppDelegate.swift */,
 				FF089D8122F5B0D80066B988 /* Model */,
 				FF49807422F6B1DE0032F04E /* StoryBoards */,
+				FF3F4A192387FD2600914B25 /* Lyrics */,
 				FF76C09022F5857C005254F5 /* Music */,
 				FF76C08A22F57E4B005254F5 /* Info.plist */,
 				FF4DD60722FECDD6004EF87C /* Assets.xcassets */,
@@ -177,13 +184,6 @@
 				FF76C09122F585D8005254F5 /* All Too Well.mp3 */,
 			);
 			path = Music;
-			sourceTree = "<group>";
-		};
-		FFB412692387C70A00F14A62 /* Lyrics */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lyrics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,15 +251,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF76C08922F57E4B005254F5 /* LaunchScreen.storyboard in Resources */,
-				FFB4126B2387C73A00F14A62 /* All Too Well.txt in Resources */,
 				FF76C09222F585D8005254F5 /* All Too Well.mp3 in Resources */,
 				FF7A238422F992E900012CE2 /* Perfect.m4a in Resources */,
 				FF5C7D582306F49400FD5802 /* Legends.m4a in Resources */,
+				FF3F4A1F2387FD6700914B25 /* Perfect.txt in Resources */,
 				FFCCB4A423227CAB00316CDE /* Onboarding.storyboard in Resources */,
+				FF3F4A1E2387FD6700914B25 /* Legends.txt in Resources */,
+				FF3F4A1D2387FD6700914B25 /* All Too Well.txt in Resources */,
 				FF76C08422F57E4A005254F5 /* Main.storyboard in Resources */,
-				FFB6E0BB2387EA71004356B5 /* Legends.txt in Resources */,
 				FF4DD60822FECDD6004EF87C /* Assets.xcassets in Resources */,
-				FFB6E0B92387EA3E004356B5 /* Perfect.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
