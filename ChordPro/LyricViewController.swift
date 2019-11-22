@@ -81,7 +81,7 @@ class LyricViewController: UIViewController, UITableViewDataSource, UITableViewD
             } else {
                 UserDefaults.standard.set(timePlayed, forKey: "timePlayed")
             }
-            print("Time played: \(UserDefaults.standard.integer(forKey: "timePlayed"))")
+//            print("Time played: \(UserDefaults.standard.integer(forKey: "timePlayed"))")
         }
     }
     

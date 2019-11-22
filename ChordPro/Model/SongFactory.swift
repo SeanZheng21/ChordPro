@@ -10,7 +10,7 @@ import Foundation
 class SongFactory {
     static func getLyric(of songName: String) -> [Line] {
         var lineStrings: [String] = []
-        if let filepath = Bundle.main.path(forResource: songName, ofType: "txt") {
+        if let filepath = Bundle.main.path(forResource: songName, ofType: "lrc") {
             do {
                 let songURL = URL.init(fileURLWithPath: filepath)
                 let contents = try String(contentsOf: songURL)

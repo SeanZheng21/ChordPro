@@ -18,6 +18,23 @@ class SongTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let fm = FileManager.default
+        let path = Bundle.main.resourcePath!
+
+        do {
+            let items = try fm.contentsOfDirectory(atPath: path)
+            // Look for lyric files
+            for item in items {
+                if item.hasSuffix(".lrc") {
+                    print("Found \(item)")
+                }
+            }
+        } catch {
+            // pass
+        }
+        // TODO
+        // Take songs from JSON
         songs.append(Song("Perfect", "Divide", "Ed Sheeran", "G Em C D", startChord: "G", startStrumming: "", 1, .easy, "m4a", videoURL: "https://www.youtube.com/watch?v=8NODy7CMzb0"))
         songs.append(Song("All Too Well", "Red", "Taylor Swift", "C G Am F", startChord: "C", startStrumming: "", like: true, videoURL: "https://www.youtube.com/watch?v=9d0CdE9KVrI"))
         songs.append(Song("Legends", "Unapologetically", "Kelsea Ballerini", "C Dm Am F", startChord: "Am", startStrumming: "", 4, .hard, "m4a", like: false, videoURL: "https://www.youtube.com/watch?v=60K-JbbLfc0"))
