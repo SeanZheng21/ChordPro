@@ -83,9 +83,9 @@ With ChordPro, you can practice your favorite guitar songs with lyrics, chords, 
 ![chord](https://github.com/SeanZheng21/ChordPro/blob/master/Screenshots/chord.png)
 
 ## Chord library
-![chord1](https://github.com/SeanZheng21/ChordPro/blob/master/Screenshots/chord1.png)
-![chord2](https://github.com/SeanZheng21/ChordPro/blob/master/Screenshots/chord2.png)
-![chord3](https://github.com/SeanZheng21/ChordPro/blob/master/Screenshots/chord3.png)
+![chord1](https://github.com/SeanZheng21/ChordPro/blob/master/Screenshots/chords1.png)
+![chord2](https://github.com/SeanZheng21/ChordPro/blob/master/Screenshots/chords2.png)
+![chord3](https://github.com/SeanZheng21/ChordPro/blob/master/Screenshots/chords3.png)
 
 
 ## Progression library
