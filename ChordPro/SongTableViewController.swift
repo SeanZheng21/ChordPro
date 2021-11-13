@@ -33,7 +33,7 @@ class SongTableViewController: UITableViewController {
         } catch {
             // pass
         }
-        // TODO
+        tableView.headerView(forSection: 0)?.backgroundView?.backgroundColor = .clear
         // Take songs from JSON
         songs.append(Song("Perfect", "Divide", "Ed Sheeran", "G Em C D", startChord: "G", startStrumming: "", 1, .easy, "m4a", videoURL: "https://www.youtube.com/watch?v=8NODy7CMzb0"))
         songs.append(Song("All Too Well", "Red", "Taylor Swift", "C G Am F", startChord: "C", startStrumming: "", like: true, videoURL: "https://www.youtube.com/watch?v=9d0CdE9KVrI"))
